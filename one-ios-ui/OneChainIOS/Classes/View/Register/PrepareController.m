@@ -13,7 +13,7 @@
 #import "LZExchangeRateTableViewController.h"
 #import "SeedSegmentController.h"
 #import "DecryptWalletSegmentController.h"
-
+#import "LZRegistViewController.h"
 #define KRECOVER_BTN_BOTTOM 89
 #define KRECOVER_BTN_HOR_PADDING 25
 #define KRECOVER_BTN_HEIGHT 44
@@ -201,18 +201,14 @@ static const CGFloat KBUTTON_FONT_SIZE = 16.f;
 // 注册
 - (void)registerBtnClick
 {
-    KLog(@"registerBtnClick");
-    SeedPrepareController *prepare = [[SeedPrepareController alloc] init];
-    [self.navigationController pushViewController:prepare animated:YES];
+    LZRegistViewController *regist = [[LZRegistViewController alloc] init];
+    regist.seed = [ONEChatClient buildSeed];
+    [self.navigationController pushViewController:regist animated:YES];
 }
 
 - (void)recoverBtnClick
 {
-    KLog(@"recoverBtnClick");
-//    LZRecoverViewController *recover = [[LZRecoverViewController alloc] init];
-//    [self.navigationController pushViewController:recover animated:YES];
     SeedSegmentController *seg = [[SeedSegmentController alloc] init];
-//    DecryptWalletSegmentController *seg = [[DecryptWalletSegmentController alloc] init];
     [self.navigationController pushViewController:seg animated:YES];
 }
 
