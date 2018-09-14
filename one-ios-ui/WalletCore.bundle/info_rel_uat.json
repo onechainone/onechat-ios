@@ -1,0 +1,34 @@
+{
+    "desc":"uat - 灰度 模式",
+    "UrlConfigFileName":"GateUrlConfigUat",
+    "ServerUrl":{
+        "service_register":"http://47.52.231.22:15000/",
+        "service_gate":"http://47.52.231.22:18580/",
+        "service_gateway":"http://47.52.231.22:19580/",
+        "service_gateway_read":"http://47.52.231.22:19580/",
+        "service_group":"http://47.52.231.22:15580/",
+        "service_group_read":"http://47.52.231.22:15580/",
+        "service_openservice":"http://47.52.231.22:14580/",
+        "service_openservice_ui":"http://47.52.231.22:17001/",
+        "service_portal":"http://47.52.231.22:17002/",
+        "service_image":"http://hkimage1.yuyin365.com:800",
+        "service_storage":"http://hkstorage2.yuyin365.com:18080/",
+        "service_shequ_image":"http://sxceph1.coinrr.com:7480/",
+        "service_shequ_video":"http://sxvideo1.coinrr.com:18081/",
+        "service_shequ_api":"http://47.52.231.22:17005/",
+        "service_shequ_api_image":"http://sximage1.coinrr.com:18081/",
+        "service_shequ_api_video":"http://sxvideo1.coinrr.com:18081/",
+        "service_login":"http://47.52.231.22:18585/",
+    },
+    "OneChainId":"037a21b6d297d9e13d82c23ccdd13a08a5b05300c4ec48b253dc2aac6a97ed87",
+    "OnePrefix":"ONE",
+    "OneChatAmount":1,
+    "OneChatFee":100,
+    "OneCoinAssetId":"1.3.0",
+    "OneChatAssetId":"1.3.1",
+    "NodeLimit":10,
+    "NodeSelectLimit":100,
+    
+
+}
+

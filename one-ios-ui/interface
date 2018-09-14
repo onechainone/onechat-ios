@@ -1,0 +1,87 @@
+
+交易记录
+getTicker: 最新交易价格
+GetOrderBook：买卖信息
+GetFullAccounts：当前委托
+
+data:Ticker
++(void) getTickerWithSymbolA:(NSString*) sa symbolB:(NSString*) sb cb:(ASFunctionCallback) cb;
+
+data:OrderBook
++(void) getOrderBookRequestWithSymbolA:(NSString*) sa symbolB:(NSString*) sb limit:(int) limit cb:(ASFunctionCallback) cb;
+
+data:FullAccount
++(void) getFullAccountsRequestWithAccountId:(NSString*) accountId cb:(ASFunctionCallback) cb;
+
+[OneWebSocketServiceAgent getFullAccountsRequestWithAccountId:[WSHomeAccount accountId] cb:^(BOOL state, id data) {
+
+NSLog(@"%b",state);
+
+}];
+
+
+//    [OneWebSocketServiceAgent getOrderBookRequestWithSymbolA:@"IOUBTC" symbolB:@"ONE" limit:10 cb:^(BOOL state, id data) {
+//
+//        NSLog(@"%b",state);
+//
+//    }];
+
+
+//    [OneWebSocketServiceAgent getTickerWithSymbolA:@"IOUBTC" symbolB:@"ONE" cb:^(BOOL state, id data) {
+//
+//        NSLog(@"%@",state);
+//
+//    }];
+
+
+// 交易历史记录
+
+NSString* w = [NSString stringWithFormat:@" transfer_asset_id = '%@'",account.ID];
+
+NSArray* list = [ASObjectCache searchObjectWithClass:[Transfers class] where:w];
+
+for(Transfers* t in list) {
+
+// NSLog(@"%@\n",t.transfer_asset_id);
+}
+
+
+
+
+
+充值：各个币种钱包交易接口
+闪付：one币各种资产交易接口
+
+AssetInfo* assetInfo = [[AssetInfo alloc] initWithId:@"Def_OneChat_AssetID"];
+
+assetInfo.name = @"OneChat";
+
+TransferContextDefault* ct = [[TransferContextDefault alloc] initWithAssetInfo:assetInfo];
+
+ct.toAccountId = ID;
+
+ct.msg = msg;
+
+ct.amount = Def_One_Chat_Amount;
+ct.fee = Def_One_Chat_Fee;
+
+// 构造消息实体
+
+Transaction* tx = [TransferFactory buildTransferWithContext:ct];
+
+
+
+提现：
+
+如上
+msg：特定币种的钱包地址
+
+
+
+
+提现：            int nRet = mSendWebsocket.sendFundsByAccountName(false, mAccountAsset, "", mainAmount, mainAsset,
+
+添加充值地址：    public static void AddAssetAddressRequest(String asset_code, String coin_address, final RequestSuccessListener<Result> successListener) {
+
+
+

@@ -1,0 +1,26 @@
+{
+   
+    
+    "service_gateway":[
+                    "http://47.92.108.254:8581/"
+                    ],
+    "service_shequ_image":[
+                    "http://120.220.14.94:7480/"
+                    ],
+    "service_shequ_video":[
+                    "http:/114.242.25.86:8081/"
+                    ],
+    "service_shequ_api":[
+                         "http://114.242.25.86:8080/"
+                    ],
+    "service_shequ_api_image":[
+                              "http://114.242.25.86:8081/"
+                    ],
+    "service_shequ_api_video":[
+                               "http://114.242.25.86:8081/"
+                               ],
+    "service_group_avatar":[
+                                "http://47.92.108.254:8582/"
+                            ]
+    
+}

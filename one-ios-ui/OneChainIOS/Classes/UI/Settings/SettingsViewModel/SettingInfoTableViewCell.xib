@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="KGk-i7-Jjw" customClass="SettingInfoTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 2" translatesAutoresizingMaskIntoConstraints="NO" id="sPa-aZ-2rk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lcZ-1W-Bz4">
+                        <rect key="frame" x="12" y="69" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="mU2-yk-XBq"/>
+                            <constraint firstAttribute="height" constant="70" id="yma-XR-Mgn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqD-Sc-BQv">
+                        <rect key="frame" x="97" y="68" width="33" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONE:1234567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjG-5Q-E3b">
+                        <rect key="frame" x="97" y="88" width="179" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="dZn-FJ-Fgu"/>
+                            <constraint firstAttribute="width" constant="179" id="fPl-mt-Pv9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pX1-UR-RUi">
+                        <rect key="frame" x="315" y="84.5" width="40" height="40"/>
+                        <state key="normal" image="ScanQRCode1"/>
+                        <connections>
+                            <action selector="showMyQRCode:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="FWd-9k-bIo"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎来到ONE的世界" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRK-W6-V2J">
+                        <rect key="frame" x="97" y="128" width="165" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="ZQp-91-DFU"/>
+                            <constraint firstAttribute="width" constant="165" id="cp3-9W-9hg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4m-RT-J3Z">
+                        <rect key="frame" x="97" y="110" width="210" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="LnQ-05-Gn1"/>
+                            <constraint firstAttribute="width" constant="210" id="wCf-M9-f4Z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bRK-W6-V2J" firstAttribute="leading" secondItem="lcZ-1W-Bz4" secondAttribute="trailing" constant="15" id="1T1-lg-8So"/>
+                    <constraint firstItem="ZjG-5Q-E3b" firstAttribute="leading" secondItem="lcZ-1W-Bz4" secondAttribute="trailing" constant="15" id="4HW-rc-RTd"/>
+                    <constraint firstAttribute="trailing" secondItem="pX1-UR-RUi" secondAttribute="trailing" constant="20" id="A2L-F6-4ux"/>
+                    <constraint firstItem="bRK-W6-V2J" firstAttribute="top" secondItem="ZjG-5Q-E3b" secondAttribute="bottom" constant="19" id="EVj-hB-Pwo"/>
+                    <constraint firstItem="sPa-aZ-2rk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="G4L-IM-2Z0"/>
+                    <constraint firstAttribute="bottom" secondItem="sPa-aZ-2rk" secondAttribute="bottom" id="Kfj-ES-dUf"/>
+                    <constraint firstItem="lcZ-1W-Bz4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="24.25" id="PUh-zI-bJi"/>
+                    <constraint firstItem="sPa-aZ-2rk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Y3X-TE-X3n"/>
+                    <constraint firstItem="w4m-RT-J3Z" firstAttribute="top" secondItem="ZjG-5Q-E3b" secondAttribute="bottom" constant="1" id="YgO-es-o8F"/>
+                    <constraint firstItem="ZjG-5Q-E3b" firstAttribute="top" secondItem="wqD-Sc-BQv" secondAttribute="bottom" constant="0.5" id="eID-1S-PsP"/>
+                    <constraint firstItem="wqD-Sc-BQv" firstAttribute="top" secondItem="lcZ-1W-Bz4" secondAttribute="top" constant="-1" id="gmx-sA-hXV"/>
+                    <constraint firstItem="lcZ-1W-Bz4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="npr-aP-gxS"/>
+                    <constraint firstItem="wqD-Sc-BQv" firstAttribute="leading" secondItem="lcZ-1W-Bz4" secondAttribute="trailing" constant="15" id="ohF-BB-Jg3"/>
+                    <constraint firstItem="pX1-UR-RUi" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="24.75" id="pUK-BL-OeJ"/>
+                    <constraint firstAttribute="trailing" secondItem="sPa-aZ-2rk" secondAttribute="trailing" id="pu7-jV-Kpq"/>
+                    <constraint firstItem="w4m-RT-J3Z" firstAttribute="leading" secondItem="ZjG-5Q-E3b" secondAttribute="leading" id="x4a-C5-EOM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="IconImg" destination="lcZ-1W-Bz4" id="sdH-of-SHr"/>
+                <outlet property="NameLabel" destination="wqD-Sc-BQv" id="ScY-Xf-1lN"/>
+                <outlet property="accountLabel" destination="ZjG-5Q-E3b" id="5oR-0S-RVB"/>
+                <outlet property="bgImageView" destination="sPa-aZ-2rk" id="fyt-pW-IiT"/>
+                <outlet property="erWeimaBtn" destination="pX1-UR-RUi" id="8yV-Zd-6Bi"/>
+                <outlet property="introLabel" destination="bRK-W6-V2J" id="MKF-ve-GvO"/>
+                <outlet property="yaoQingMaLabel" destination="w4m-RT-J3Z" id="qiW-qs-ecz"/>
+            </connections>
+            <point key="canvasLocation" x="62.5" y="112"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Group 2" width="375" height="164"/>
+        <image name="ScanQRCode1" width="40" height="40"/>
+    </resources>
+</document>
