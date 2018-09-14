@@ -1,209 +1,513 @@
- 酷信（高仿微信-环信的人说让我取个屌的名字） 
-==================
+# WalletCore  
 
-#	请花一两分钟看完说明
+## 结构   
 
+- 账号管理
+- 聊天管理
+- 群组管理
+- 联系人管理
+- 红包管理
+- 社区管理   
 
-###告示(Notices):
+## 初始化SDK   
 
-	0.请花一两分钟看完说明,我每天都要回答怎么安装,我累死了.
-	如果你下载后用不了,请到百度云下面这个地址去下载
-	http://pan.baidu.com/s/1skSi2lf
-	1.LZEasemob3 works on "Xcode 8.0 , iOS 8+ and requires ARC to build. 
-	2.如果无法运行项目,请把Xcode 升级为8.0版本以上,ios8.0以上,cocoapods版本最好在0.39.0和1.0.1,最好不要用测试版,二哥亲测是没有问题的.
-	3.If not running,check the Resources. http://www.bubuko.com/infodetail-1020786.html
-	4.有谁想为开源贡献自己的一份力量的单独联系我.我会在文档加入你的名字.期待你哟!!!
+### 初始化环境
+
+APP启动需要调用`registerSDK`来初始化SDK环境，在`Appdelegate`的`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions `方法中调用。
+
+```object-c
+[[ONEChatClient sharedClient] registerSDK];
+```
+
+### 判断本地是否存在账号
+
+如果本地没有账号则需要去注册或者恢复,建议在进行注册或者恢复之前先进行节点检测以选择性能最优的节点。如果本地有账号信息则验证密码即可。
+
+```object-c
+BOOL exist = [ONEChatClient isHomeAccountExist];
+```   
+
+## 注册恢复   
+
+### 助记词   
+
+助记词由15个单词组成   
+
+- 生成助记词   
+
+	```object-c
+	NSString *seed = [ONEChatClient buildSeed];
+	```
+- 获取本地存储的助记词   
+
+	```object-c
+	NSString *seed = [ONEChatClient seedWithPassword:password];
+	```
 	
-	5.谢谢大家一直以来的关注,二哥这段时间太忙所以更新比较慢,大家觉得好的话请推荐给你的朋友们.为感谢大家二哥在STAR 1000前一定把群聊功能加上,请大家继续关注.
+- 验证助记词是否合法
+
+	```object-c
+	// invalidSeeds会返回错误的助记单词列表
+	NSMutableArray *invalidSeeds = [NSMutableArray array];
+    
+    ONEError *error = [ONEChatClient seedIsValid:seed invalidWords:&invalidSeeds];
+	```   
 	
-###安装方式(Installation Method)
-* 如果你不会安装就去百度云下载,下面是地址.如果百度云失效请联系我,这之后我不会挨个回答各位怎么安装	
+- 获取加密助记词   
 
- 	 	http://pan.baidu.com/s/1skSi2lf
- 	 	
- 	 	下载完之后解压切换到根目录
- 	 	
- 	 	git pull
- 	 	
- 	 	更新到最新版本.
+	加密助记词是通过助记词和用户密码通过一系列加密生成的加密字符串
 
-* 由于包含实时语音版本SDK静态库超过100M,所以用到了git-lfs,当pod install之前需要安装git-lfs 
+	```object-c
+	NSString *encryptedSeed = [ONEChatClient getEncryptedSeed];
+	```   
+	
+- 用密码解密加密后的助记词   
 
-		brew install git-lfs
-		git lfs init
+	```object-c
+	NSString *seed = [ONEChatClient aesCommonDecryptWithPass:password string:encryptedSeed];
+	```
+	
+### 注册   
 
-* First step
+- 生成账号信息
 
-		git clone https://github.com/nacker/LZEasemob3.git
-* Second step
+	```object-c
+	WSAccountInfo* info = [[WSAccountInfo alloc] init];
+	info.name = name;	// 用户名
+	info.nickname = nickname;	// 昵称
+	info.referrer = invitecode;	// 邀请码
+	info.sex = AccountMan;	// 性别
+	```   
+	
+- 注册账号   
 
-		pod install
+	注册账号需要传`WSAccountInfo`对象、助记词以及密码   
+
+
+	```object-c
+	[[ONEChatClient sharedClient] createAccount:info seed:seed password:password completion:^(ONEError *error){
+	
+		dispatch_async(dispatch_get_main_queue(), ^{
+
+   			if (!error) {
 		
-* Third step
+					// 注册成功
+    			} else {
+					// 注册失败
+   			}
+		});
+	}];
+
+	```
+	> 注册成功之后会回调`- (void)accountVerificationFinish:(AccountVerifyType)type;`在此方法中需要去做获取token等一系列操作。`delegate`使用方法使用见。   
+	
+### 恢复   
+
+- 恢复账号   
+
+	恢复账号需要传入助记词以及密码
+
+	```object-c
+	[[ONEChatClient sharedClient] recoverAccount:seed password:self.miMatextFiled.text completion:^(ONEError *error) {
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            if (!error) {
+                // 恢复成功
+            } else {
+                // 恢复失败
+            }
+        });
+    }];
+	```
+	> 恢复成功之后也会回调`- (void)accountVerificationFinish:(AccountVerifyType)type;`。在此方法中需要去做获取token等一系列操作。`delegate`使用方法使用见。    
+	
+### 验证密码   
+
+- 验证密码   
+
+	APP每次启动,如果本地存在账号，则不需要进行注册或者恢复操作，通过验证密码可以激活账号。   
+	
+	```object-c
+	BOOL state = [ONEChatClient verifyAccountWithPassword:password];
+	```
+	> 验证密码成功之后也会回调`- (void)accountVerificationFinish:(AccountVerifyType)type;`。在此方法中需要去做获取token等一系列操作。`delegate`使用方法使用见。   
+	
+
+## 账号管理   
+
+### 当前账号信息   
+
+- AccountName
+
+	`AccountName`为注册时传入的用户名   
+	获取自己的`AccountName`:
+	
+	```object-c
+	NSString *accountName = [ONEChatClient homeAccountName];
+	```
+
+- AccountId
+
+	`AccountId`是服务器生成的唯一ID，格式为`1.2.xxx`。   
+	获取自己的`AccountId`:
+	
+	```object-c
+	NSString *accountId = [ONEChatClient homeAccountId];
+	```   
+	
+- AccountInfo   
+
+	`AccountInfo`为自己的账号信息，包括用户名、昵称、性别、头像URL等信息。   
+	获取自己的`AccountInfo`:   
+	
+	```object-c
+	WSAccountInfo *info = [ONEChatClient homeAccountInfo];
+	```
+	
+- 本地是否有账号信息   
+
+	```object-c
+	BOOL isExist = [ONEChatClient isHomeAccountExist];
+	```   
+	
+- 本地账号是否已经激活   
+
+	```object-c
+	BOOL isActive = [ONEChatClient isHomeAccountActive];   
+	```
+	
+- 更新本地账号信息   
+
+	```object-c
+	BOOL isSuccess = [ONEChatClient saveAccountInfo:accountInfo];
+	```
+	
+- 更新用户信息到Server   
+
+	只能更新用户性别、昵称、简介
+
+	```object-c
+    [[ONEChatClient sharedClient] pushAccountInfo:accInfo completion:^(ONEError *error) {
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error) {
+            		// 更新成功
+            } else {
+            		// 更新失败
+            }
+        });
+    }];
+	
+	```   
+	
+- 上传用户头像   
+
+	传入UIImage对象
+
+	```object-c
+	[[ONEChatClient sharedClient] uploadAvatar:image completion:^(ONEError *error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!error) {
+            		// 上传成功
+           } else {
+           		// 上传失败
+           }
+        });
+    }];
+	```   
+	
+- 从服务器获取用户头像URL   
+
+
+	```
+	[[ONEChatClient sharedClient] fetchUserAvatarUrl:account_id completion:^(ONEError *error, NSString *newAvatarUrl) {
+       
+        dispatch_async(dispatch_get_main_queue(), ^{
+           
+            if (!error) {
+                WSAccountInfo *info = [ONEChatClient accountInfoWithName:accountName];
+                info.avatar_url = newAvatarUrl;
+                [ONEChatClient saveAccountInfo:info];
+            }
+        });
+    }];
+	```
+	
+	获取到的头像URL在界面展示时需要拼接Host   
+	
+	```object-c
+	NSString *urlString = [NSString stringWithFormat:@"%@%@",[ONEUrlHelper userAvatarPrefix], accountInfo.avatar_url];
+	```
+
+
+### 他人账号信息
+
+- 获取账号信息   
+
+	```object-c
+	// 根据accountId获取账号信息
+	WSAccountInfo *info = [ONEChatClient accountInfoWithId:accountId];
+	// 根据accountName获取账号信息
+	WSAccountInfo *info = [ONEChatClient accountInfoWithName:accountName];
+	// 根据accountName获取accountId
+	NSString *accountId = [ONEChatClient accountIdWithName:accountName];
+	```
+
+- 通过`accountName`获取账号信息，如果本地有，取本地，本地没有从Server拉取   
+
+	```object-c
+	[[ONEChatClient sharedClient] pullAccountInfoWithAccountName:accountName completion:^(ONEError *error, WSAccountInfo *accountInfo) {
+	    // 获取成功之后会自动更新本地存储的账号信息                    
+	}];
+	```   
+	
+- 通过`accountName`获取账号信息，直接从Server拉取更新本地   
+
+	```object-c
+    [[ONEChatClient sharedClient] updateFriendAccountInfoWithCompletion:^(ONEError *error) {
+       	if (!error) {
+       		// 成功
+       	}
+    }];
+	```
+	
+- 批量获取账号信息   
+	
+	通过`accountId`列表获取,自动更新本地   
+	
+	```object-c
+	[[ONEChatClient sharedClient] pullAccountInfosWithAccountIdList:needFetchList completion:^(ONEError *error) {
+   }];
+	```   
+	
+## 消息管理   
+
+### 消息构造   
+
+
+- 消息Body		
+
+	|消息类型|ONEMessageBodyType|支持类型|   
+	|:--:|:--:|:--:|   
+	|文本|ONEMessageBodyTypeText|全部|
+	|图片|ONEMessageBodyTypeImage|全部|
+	|位置|ONEMessageBodyTypeLocation|全部|
+	|语音|ONEMessageBodyTypeVoice|全部|
+	|红包|ONEMessageBodyTypeRedpacket|群聊|
+
+- 文本消息   
+
+	```object-c
+	NSString *willSendText = @"message";
+	ONETextMessageBody *body = [[ONETextMessageBody alloc] initWithText:willSendText];
+	```   
+	
+- 图片消息   
+
+	```object-c
+	NSData *imageData = UIImageJPEGRepresentation(image, 1);
+	ONEImageMessageBody *body = [[ONEImageMessageBody alloc] initWithData:imageData];
+	```   
+	
+- 位置消息   
+
+	```object-c
+	double latitude = 1.0;
+	double longitude = 1.0;
+	NSString *address = @"北京市";
+	ONELocationMessageBody *body = [[ONELocationMessageBody alloc] initWithLatitude:latitude longitude:longitude address:address];
+	```   
+
+- 语音消息
+
+	```object-c
+	NSString *voiceLocalPath = @"语音文件本地路径";
+	int duration = 语音时长;
+	ONEVoiceMessageBody *body = [[ONEVoiceMessageBody alloc] initWithLocalPath:localPath];
+	body.duration = duration;
+	```   
+	
+- 红包消息   
+
+	```object-c
+	NSDictionary *dic = @{
+	                      @"red_packet_id":红包ID,
+	                      @"red_packet_msg":红包留言
+	                      };
+   NSString *params = [dic yy_modelToJSONString];
+   ONERedPacketMessageBody *body = [[ONERedPacketMessageBody alloc] initWithPacket:params];
+	```   
+	
+- ONEMessage构造   
+
+	- 消息类型			
+
+		|消息类型|ONEChatType|
+		|:--:|:--:|
+		|单聊|ONEChatTypeChat|
+		|群聊|ONEChatTypeGroupChat|
 		
-		open  LZEasemob3.xcworkspace
+	- 消息状态   
 
-###说明:
-	此项目构建于16/7/18,今天16年7月20号就两天时间,所以时间有限,希望大伙在使用过程中遇到BUG请@我一下,我会去认真迭代这款高仿APP
+		|消息状态|ONEMessageStatus|
+		|:--:|:--:|
+		|正在发送|ONEMessageStatusDelivering|
+		|发送成功|ONEMessageStatusSuccessed|
+		|发送失败|ONEMessageStatusFailed|
 
-*	此版本是有史以来Github上最牛逼的高仿微信项目没有之一,采用MVVM和MVC两种开发架构思想,纯代码开发,这是你们在培训机构学不到的.仅供大家学习使用,不得用于商业用途.最终解释权归作者二哥所有.
+	构造`ONEMessage`时，`from`是自己的`accountName`,单聊时，`to`为聊天对方的`accountName`。群聊时，`to`为群组ID。需要指定消息类型。
+	
+	```object-c
+	NSString *toUser = @"username";	// 对方的accountName，如果是群的话为群组ID
+	ONETextMessageBody *body = [[ONETextMessageBody alloc] initWithText:@"msg"];
+   NSString *from = [ONEChatClient homeAccountName];
+   ONEMessage *message = [[ONEMessage alloc] initWithConversationID:toUser from:from to:toUser body:body ext:nil];
+    message.chatType = ONEChatTypeChat;	// 消息类型
+    message.timestamp = [[ONEChatClient date] timeIntervalSince1970]*1000;
+	```   
+	
+### 发送消息   
 
-*	如果各位下客能帮我点STAR,半个月STAR500+,我会陆陆续续发布待实现功能,其实已经做完,一个月STAR1000+我会把微信主要功能全部实现发布出来,两个月STAR2000+我会发布纯Swift版,纯Swift版采用纯代码开发已经做的差不多了.就看大伙的手能不能点STAR了.希望大家不要下完就跑了.作为作者的二哥会很心痛的.
-*	我之前接触过很多项目,就有一个项目中的朋友圈整个控制器4千行,尼玛4千行了这项目怎么迭代,二哥现在300行解决了朋友圈的问题,还在优化中...
+构造完成`ONEMessage`对象完成后，调用SDK提供的api进行消息的发送操作。   
+发送失败会回调相应的```error```。
 
----
-##下载地址(分流下载)
+```object-c
+[[ONEChatClient sharedClient] sendMessage:message progress:nil completion:^(ONEMessage *message, ONEError *error) {
+        
+    if (!error) {
+			// 发送成功
+    } else {
+			// 发送失败
+    }
+ }];
+```   
 
-###码云: <https://git.oschina.net/iosNacker/LZEasemob3.git>
-###GitHub: <https://github.com/nacker/LZEasemob3.git>
+### 接收消息   
 
+首先要在需要接收的页面注册回调,需要在哪个页面接收消息的通知，就在哪个界面注册回调。   
 
----
-##关于我
-* QQ群  : 527885963 <br>
+```object-c
+[[ONEChatClient sharedClient] addDelegate:self delegateQueue:nil];
+```   
 
-![LZEasemob3 in action](./image/me.png)
+实现代理方法：   
 
-##高仿微信计划：
+```object-c
+/**
+ 收到新消息
 
-### 0.测试账号
-	h18    123456
-	j20    123456
-	j25    123456
-	t17    123456
-	o22    123456
-	k5     123456
-	y21    123456
-	i9     123456
-	g14    123456
-	nacker 123456
+ @param aMessages 消息数组List<ONEMessage>
+ */
+- (void)didReceiveMessages:(NSArray *)aMessages;
+```   
 
-### 1.采用技术点
-* pod用于第三方库的管理
+### 解析消息   
 
-* 环信SDK(V3.2.1)作为此APP DEMO的IM功能
+```object-c
+- (void)didReceiveMessages:(NSArray *)aMessages
+{
+	for (ONEMessage *msg in aMessages) {
+		
+		ONEMessageBody *body = msg.body;
+		switch(body.type) {
+			// 文本消息
+			case ONEMessageBodyTypeText: 
+			{
+				ONETextMessageBody *textBody = (ONETextMessageBody *)body;
+				NSString *receiveText = textBody.text;
+			}
+			break;
+			// 图片消息,收到图片消息SDK会自动下载，下载缓存本地之后会将本地路径和远程路径做映射。
+			// 通过消息附件的远程路径获取本地路径进行展示。
+			case ONEMessageBodyTypeImage:
+			{
+				ONEImageMessageBody *imgMessageBody = (ONEImageMessageBody *)body;
+                
+	            NSString *localPath = imgMessageBody.localPath;
+	            NSString *remotePath = imgMessageBody.remotePath;
+	            if (localPath == nil) {
+	                
+	                localPath = [ONEChatClient localPathFromRemotePath:remotePath];
+	            }
+			}
+			break;
+			// 语音消息，处理等同图片消息
+			case ONEMessageBodyTypeVoice:
+			{
+				ONEVoiceMessageBody *voiceBody = (ONEVoiceMessageBody *)body;
+				NSString *localPath = voiceBody.localPath;
+                NSString *remotePath = voiceBody.remotePath;
+                if (localPath == nil) {
+                    
+                    localPath = [ONEChatClient localPathFromRemotePath:remotePath];
+                }
+			}
+			break;
+			// 位置消息
+			case ONEMessageBodyTypeLocation:
+			{
+				ONELocationMessageBody *locationBody = (ONELocationMessageBody *)body;
+                NSString *address = locationBody.address;
+                long latitude = locationBody.latitude;
+                long longitude = locationBody.longitude;
+			}
+			break;
+			// 红包消息
+			case ONEMessageBodyTypeRedpacket:
+			{
+				ONERedPacketMessageBody *msgBody = (ONERedPacketMessageBody *)body;
+                NSString *params = msgBody.redpacketParam;
+                if (params.length > 0) {
+                    
+                    NSData *jsonData = [params dataUsingEncoding:NSUTF8StringEncoding];
+                    if (jsonData) {
+                        
+                        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+                        NSString *red_id = dic[@"red_packet_id"];
+                        NSString *red_msg = dic[@"red_packet_msg"];
+                    }
+                }
+			}
+			break;
+			default:
+                break;
+		}
+	}
+} 
+```   
 
-* Masonry用于界面布局
+### 会话管理   
 
-* FMDB用于数据存储
-
-* MJRefresh用于上拉下拉刷新
-
-* MJExtension用于字典转模型
-
-* SDWebImage用于图片展示下载
-
-* ReactiveCocoa用作响应式编程提高代码可读性
-
-* MLLabel用于Label的图文混排
-
-* IM部分采用MVC架构,朋友圈采用MVVM架构
-
-### 2.已经实现功能
-* 微信首页（列表数据展示、cell侧滑编辑、点击进入聊天详情界面、发送文字图片和语音、可电话视频）
-
-* 通讯录（联系人字母排序、添加联系人、群组列表）
-
-* 发现（朋友圈、下拉刷新、朋友圈点赞功能）
-
-* 我（界面、退出功能）
-
-* 摇一摇功能
-
-* 系统红包功能 
-
-* 搜索好友
-
-### 3.待实现功能（）
-* 朋友圈细节完善
-
-* 扫一扫
-
-* 相册、钱包
-
-* 其他细节实现
-
-* 发送朋友圈信息
-
-* 其他
-
-
-##部分截图
-####整体架构图
----
-![LZEasemob3 in action](./image/LZEasemob3.png)
-
-#### 界面展示
----
-![LZEasemob3 in action](./image/LZ1_1.gif)
-
-#### 微信
----
-![LZEasemob3 in action](./image/LZ1.gif)
-
-#### 通讯录
----
-![LZEasemob3 in action](./image/LZ2.gif)
-#### 发现
----
-![LZEasemob3 in action](./image/LZ3.gif)
-#### 我
----
-![LZEasemob3 in action](./image/LZ4.gif)
-
-##--------------------版本更新记录-------------------
-
-###V1.0.6 (2016.12.6)
-1. 更新环信SDKV3.2.1;
-2. 更新朋友圈布局混乱的问题;
-3. 新增搜索功能;
-4. 修复一些bug;
-5. 新增我的界面一些零碎的功能.
-
-###V1.0.5 (2016.10.26)
-1. 更新环信SDKV3.2.0 2016.10.25;
-2. 整体架构更换,让小菜菜们拖我的Classes目录就可以分分钟把IM功能集成起来.
-
-###V1.0.4 (2016.8.29)
-1. 解决添加好友逻辑BUG;
-2. 增加群组列表;
-3. 更新环信SDKV3.1.5 2016-08-26.
-
-![LZEasemob3 in action](./image/groupList.gif) 
-
-###V1.0.3 (2016.7.31)
-1. 朋友圈点赞功能; 
-2. 增加摇一摇功能(真机上可用);
-3. 修复V1.0.2中残留的Bug.
- 
-![LZEasemob3 in action](./image/like.gif) 
-![LZEasemob3 in action](./image/Shake1.png) 
-![LZEasemob3 in action](./image/Shake2.png)
-
-###V1.0.2 (2016.7.22)
-1. 增加朋友圈图片浏览器功能;
-2. 美化登录界面;
-3. 更换了聊天界面的展示图片功能;
-4. 修改上一个版本中存在的一些Bug.
-
-![LZEasemob3 in action](./image/v102.gif)
-
-### V1.0.1(2016.7.20)
-1.	工程项目初始化,完善一部分功能.
+会话在本地DB进行管理   
 
 
-##感恩
->感谢那些开源作者们,我在这里就不一一点名感谢了.有了你们在整个项目的开发进度上提升了不少.也让我学会了很多
+- 获取会话列表   
+
+	```object-c
+	NSArray *list = [[ONEChatClient sharedClient] getAllConversations];
+	```
+
+- 获取单个会话实例   
 
 
-## 期待
+	```object-c
+	// 如果本地没有这个会话会创建新的实例
+	ONEConversation *conversation = [[ONEChatClient sharedClient] getConversation:conversationChatter type:conversationType createIfNotExist:YES];
+	```
+	
+- 删除某个人的会话
 
-* 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的框架代码看看BUG修复没有）
-* 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
-* 如果你想为LZEasemob3输出代码，请拼命Pull Requests我
+	```object-c
+	[[ONEChatClient sharedClient] deleteConversationFromUser:accountName];
+	```   
+	
+- 删除某个会话实例
 
-
-
-
+	```object-c
+	[[ONEChatClient sharedClient] deleteConversation:conversation];
+	```
+    
 
 
