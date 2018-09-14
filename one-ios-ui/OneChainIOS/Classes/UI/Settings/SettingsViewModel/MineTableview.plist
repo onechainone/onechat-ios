@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>fenhong_bao_icon</string>
+		<key>name</key>
+		<string>trade_dividend</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_new_mining</string>
+		<key>name</key>
+		<string>mining</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_new_inout</string>
+		<key>name</key>
+		<string>money_go_and_out</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>announcement_icon</string>
+		<key>name</key>
+		<string>announcement</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_new_video</string>
+		<key>name</key>
+		<string>video_course</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_new_node_plan</string>
+		<key>name</key>
+		<string>service_node_plan</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_new_seed_backup</string>
+		<key>name</key>
+		<string>title_activity_backup_seed</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>eth_something_icon</string>
+		<key>name</key>
+		<string>eth_standard_switch</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_more</string>
+		<key>name</key>
+		<string>setting_more</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_new_setting</string>
+		<key>name</key>
+		<string>action_settings</string>
+	</dict>
+</array>
+</plist>

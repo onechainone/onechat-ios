@@ -1,0 +1,34 @@
+{
+    "service_gate":[
+        "http://testgate2.yuyin365.com:8580"
+    ],
+    "service_gateway":[
+                    "http://testgateway2.yuyin365.com:8581"
+                    ],
+    "service_register":[
+                    "http://testfaucet2.yuyin365.com:5001"
+                    ],
+    "service_group":[
+                     "http://testgroup2.yuyin365.com:8582"
+                    ],
+    "service_chat":[
+                    "ws://onechat1.yuyin365.com:22201"
+    ],
+    
+    "service_asset":[
+                    "ws://testchat3.yuyin365.com:22204"
+                    ],
+    
+    "service_storage":[
+                     "http://teststorage2.yuyin365.com:18080/"
+                     ],
+    
+    "service_avatar":[
+                       "http://testavatar2.yuyin365.com:18080/"
+                       ],
+    
+    "service_image":[
+                      "http://testimage2.yuyin365.com:80/"
+                    ]
+    
+}

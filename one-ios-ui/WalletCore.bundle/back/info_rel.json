@@ -1,0 +1,9 @@
+{
+    "UrlConfigFileName":"GateUrlConfigRelease",
+    "OneChainId":"0d840f98fd294ee3981bd8990e331a1dfc06474cf8c37b86b79adb8f8120267b",
+    "OnePrefix":"ONE",
+    "OneChatAmount":1,
+    "OneChatFee":100,
+    "OneCoinAssetId":"1.3.0",
+    "OneChatAssetId":"1.3.1"
+}

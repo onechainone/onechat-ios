@@ -1,0 +1,1686 @@
+/************************************************************
+ *  * Hyphenate CONFIDENTIAL
+ * __________________
+ * Copyright (C) 2016 Hyphenate Inc， All rights reserved，
+ *
+ * NOTICE: All information contained herein is， and remains
+ * the property of Hyphenate Inc.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Hyphenate Inc.
+ */
+
+//general
+//"register" = "注册";
+//"login" = "登录";
+//"logout" = "登出";
+//"password" = "密码";
+//"username" = "个人账户";
+//"confirmpassword"="确认密码";
+//
+//"ok" = "确定";
+//"yes" = "是";
+//"cancel" = "取消";
+//"no" = "否";
+//
+//"search" = "搜索";
+//"searching" = "正在搜索";
+//"error" = "错误";
+//"delete" = "删除";
+"copy" = "复制";
+"transpond" = "转发";
+//"save" = "保存";
+//"prompt" = "提示";
+//"add" = "添加";
+//"send" = "发送";
+//"open" = "打开";
+//"down" = "完成";
+//"choose" = "选择";
+//"accept" = "接受";
+"reject" = "拒绝";
+//"wait" = "请等待...";
+//
+//"sendingApply" = "正在发送申请...";
+//"acceptFail" = "接受失败";
+//"rejectFail" = "拒绝失败";
+//"transponding" = "正在转发...";
+//"transpondFail" = "转发失败";
+//"refreshData" = "刷新数据...";
+//"loadData" = "加载数据...";
+//"loadDataFailed" = "加载数据失败";
+//"saySomething" = "说点啥子吧";
+//"searchResults" = "搜索结果";
+//"doneWithCount" = "确定(%i)";
+//"sureToDelete" = "请确定删除";
+//"receiveCmd" = "有透传消息";
+//"receiveMessage" = "您有一条新消息";
+//"loginAtOtherDevice" = "你的账号已在其他地方登录";
+//"loginUserRemoveFromServer" = "你的账号已被从服务器端移除";
+
+//"notFound" = "没有找到";
+//"noMore" = "没有更多数据了";
+//"hasRead" = "已读";
+//"servingIsBanned" = "服务被禁用";
+//
+////app
+//"AppName" = "环信Demo";
+//
+////error des
+"error.connectServerFail" = "连接服务器失败!";
+"error.connectServerTimeout" = "连接服务器超时!";
+//"error.connectNetworkFail" = "网络未连接!";
+//"error.notFound" = "文件路径不存在";
+//"error.initPlayerFail" = "初始化AVAudioPlayer失败!";
+//"error.palyFail" = "播放失败!";
+//"error.conversionFail" = "初始化AVAudioRecorder失败";
+//"error.initRecorderFail" = "文件格式转换失败";
+//"error.recordStoping" = "语音录制还没有结束";
+//"error.recordNotBegin" = "还没有开始语音录制";
+//"error.recordTooShort" = "录制时间过短";
+//
+////login
+//"login.beginAutoLogin" = "自动登录开始...";
+//"login.endAutoLogin" = "自动登录结束...";
+//"login.errorAutoLogin" = "自动登录失败.";
+//"login.nameNotSupportZh" = "用户名不支持中文";
+//"login.ongoing" = "正在登录...";
+//"login.fail" = "登录失败";
+//"login.inputNameAndPswd" = "请输入账号和密码";
+//"login.inputApnsNickname" = "填写推送消息时使用的昵称";
+//
+////register
+//"register.ongoing" = "正在注册...";
+"register.fail" = "注册失败";
+//"register.success" = "注册成功，请登陆";
+//"register.repeat" = "您注册的用户已存在!";
+//"register.confirmPassword" = "两次输入密码不一致，请重新输入";
+//
+////apns
+//"apns.failToRegisterApns" = "注册推送失败";
+//"apns.failToBindDeviceToken" = "消息推送与设备绑定失败";
+//"apns.content" = "推送内容";
+//
+////friend
+//"friend.add" = "添加好友";
+//"friend.somebodyAddWithName" = "%@ 添加你为好友";
+//"friend.beRefusedToAdd" = "你被'%@'无耻的拒绝了";
+//"friend.inputNameToSearch" = "输入要查找的好友";
+//"friend.repeat" = "'%@'已经是你的好友了!";
+//"friend.repeatApply" = "您已向'%@'发送好友请求了!";
+//"friend.notAddSelf" = "不能添加自己为好友";
+//"friend.repeatInvite" = "%@已经给你发来了申请";
+//"friend.somebodyInvite" = "%@ 邀请你为好友";
+//"friend.sendApply" = "正在发送申请...";
+//"friend.sendApplyFail" = "发送申请失败，请重新操作";
+//"friend.sendApplySuccess" = "发送申请成功";
+//"friend.black" = "黑名单";
+//"friend.notChatSelf" = "不能跟自己聊天";
+//"friend.notDeleteSelf" = "不能删除自己";
+//"friend.block" = "加入黑名单";
+//
+////group
+//"group.somebodyInvite" = "%@ 邀请你加入群组\'%@\'";
+//"group.applyJoin" = "%@ 申请加入群组\'%@\'";
+//"group.applyJoinWithName" = "%@ 申请加入群组\'%@\'：%@";
+//"group.sendApplyFail" = "发送申请失败:%@\n原因：%@";
+//"group.beRefusedToJoin" = "被拒绝加入群组\'%@\'";
+//"group.beKicked" = "你被从群组\'%@\'中踢出";
+//"group.agreedAndJoined" = "同意并已加入群组\'%@\'";
+//"group.join" = "加入群组";
+//"group.joined" = "已加入";
+//"group.owner" = "群主";
+//"group.describe" = "群组简介";
+//"group.join.ongoing" = "加入群组...";
+//"group.join.fail" = "加入群组失败，请重新操作";
+//"group.sendingApply" = "发送加群申请...";
+//"group.sendApplyRepeat" = "申请已发送";
+//"group.maxUserCount" = "群成员个数超了最大值了";
+//"group.atMe" = "[有人@我]";
+//"group.atAll" = "[有全体消息]";
+//"group.atPushTitle" = "在群中@了我";
+//
+////Create Group
+//"group.create.addOccupant" = "添加成员";
+//"group.create.inputName" = "请输入群组名称";
+//"group.create.inputDescribe" = "请输入群组简介";
+//"group.create.groupPermission" = "群组权限";
+//"group.create.private" = "私有群";
+//"group.create.occupantPermissions" = "成员邀请权限";
+//"group.create.allowedOccupantInvite" = "允许群成员邀请其他人";
+//"group.create.unallowedOccupantInvite" = "不允许群成员邀请其他人";
+//"group.create.ongoing" = "创建群组...";
+//"group.create.success" = "创建群组成功";
+//"group.create.fail" = "创建群组失败，请重新操作";
+//"group.create.public" = "公有群";
+//"group.create.occupantJoinPermissions" = "成员加入权限";
+//"group.create.open" = "随便加入";
+//"group.create.needApply" = "加入群组需要管理员同意";
+//"group.create.group" = "新建群聊";
+//"group.create.join" = "添加公开群";
+//
+////Group Bans
+//"group.ban.removing" = "正在将成员移出黑名单...";
+//"group.ban.adding" = "正在将成员加入黑名单...";
+//"group.ban.fetching" = "获取群组黑名单...";
+//"group.ban.fetchFail" = "获取黑名单失败: %@";
+//
+////Group Detail
+//"group.removeAllMessages" = "清空聊天记录";
+//"group.destroy" = "解散群组";
+"group.leave" = "退出群组";
+//"group.id" = "群组ID";
+//"group.occupantCount" = "群组人数";
+//"group.addingOccupant" = "添加组成员...";
+//"group.fetchInfoFail" = "获取群组详情失败，请稍后重试";
+//"group.removingOccupant" = "正在删除成员...";
+//"group.destroyFail" = "解散群组失败";
+"group.leaveFail" = "退出群组失败";
+//"group.addOccupantFail" = "添加群成员失败， 请稍后再试";
+//
+////Group Setting
+//"group.setting.receiveAndPrompt" = "接收并提示群消息";
+//"group.setting.receiveAndUnprompt" = "只接收不提示群消息";
+//"group.setting.blockMessage" = "屏蔽群消息";
+//"group.setting.save" = "设置属性";
+//"group.setting.success" = "设置成功";
+//"group.setting.fail" = "设置失败";
+//"group.setting.subject" = "请输入群组名称";
+//
+////Chatroom detail
+//"chatroom.somebodyInvite" = "%@ 邀请你加入聊天室\'%@\'";
+//"chatroom.id" = "聊天室Id";
+//"chatroom.occupantCount" = "聊天室人数";
+//"chatroom.description" = "描述";
+//"chatroom.joining" = "正在加入...";
+//"chatroom.fetchInfoFail" = "获取聊天室详情失败";
+//"chatroom.joinFailed" = "加入聊天室\'%@\'失败";
+//"chatroom.join" = "\'%@\'加入聊天室\'%@\'";
+//"chatroom.leave" = "\'%@\'离开聊天室\'%@\'";
+//"chatroom.remove" = "被踢出聊天室\'%@\'";
+//
+////call
+//"call.initFailed"="创建实时通话失败，请稍后重试";
+//"call.waiting"="等待接听...";
+//"call.connecting"="正在建立连接...";
+//"call.silence"="静音";
+//"call.speaker"="免提";
+//"call.reject"="拒接";
+//"call.answer"="接听";
+//"call.hangup"="挂断";
+//"call.finished"="连接建立完成";
+//"call.autoHangup"="没有响应，自动挂断";
+//"call.noResponse"="对方没有回应";
+//"call.connectFailed"="建立连接失败";
+//"call.connectUnsupported"="功能不支持";
+//"call.failed"="通话失败";
+//"call.offline"="对方不在线";
+//"call.suspended"="通话已挂断";
+//"call.over"="通话结束";
+//"call.cancel"="取消通话";
+//"call.rejected"="拒接通话";
+//"call.in"="正在通话中...";
+//"call.speak"="可以说话了...";
+//"call.speak.relay"="可以说话了...Relay";
+//"call.speak.direct"="可以说话了...Direct";
+//"call.init"="正在初始化通话...";
+//"call.dealloc"="正在结束通话...";
+//"call.videoSize"="宽/高: ";
+//"call.videoTimedelay"="延迟: ";
+//"call.videoFramerate"="帧率: ";
+//"call.videoLostcnt"="丢包数: ";
+//"call.videoLocalBitrate"="本地比特率: ";
+//"call.videoRemoteBitrate"="对方比特率: ";
+//"call.switchCamera"="切换摄像头";
+//
+////message
+//"message.image" = "图片";
+//"message.location" = "位置";
+//"message.voice" = "音频";
+//"message.video" = "视频";
+"message.image1" = "[图片]";
+//"message.location1" = "[位置]";
+"message.voice1" = "[音频]";
+//"message.video1" = "[视频]";
+//"message.beginReceiveOffine" = "开始接收离线消息";
+//"message.endReceiveOffine" = "离线消息接收成功";
+//"message.toolBar.inputPlaceHolder" = "输入新消息";
+//"message.toolBar.record.upCancel" = " 手指上滑，取消发送 ";
+//"message.toolBar.record.loosenCancel" = " 松开手指，取消发送 ";
+"message.toolBar.record.touch" = "按住说话";
+"message.toolBar.record.send" = "松开发送";
+//
+//"message.downloadingAudio" = "正在下载语音，稍后点击";
+//"message.downloadingVideo" = "正在获取视频...";
+//"message.videoFail" = "视频获取失败!";
+//"message.downloadingImage" = "正在获取大图...";
+//"message.imageFail" = "大图获取失败!";
+//"message.thumImageFail" = "缩略图获取失败!";
+//"message.simulatorNotSupportCamera" = "模拟器不支持拍照";
+//"message.simulatorNotSupportVideo" = "模拟器不支持录像";
+//"message.startRecordFail" = "开始录音失败";
+//"message.noMessage" = "消息已经清空";
+//"message.forbiddenWords" = "你的消息包含不当言论";
+//
+////media
+//"media.timeShort" = "录音时间太短了";
+//
+////network
+//"network.disconnection" = "当前网络连接失败";
+//
+////reconnection
+//"reconnection.retry" = "你的账号登录失败，正在重试中... \n点击 '登出' 按钮跳转到登录页面 \n点击 '继续等待' 按钮等待重连成功";
+//"reconnection.ongoing" = "正在重连中...";
+//"reconnection.fail" = "重连失败，稍候将继续重连";
+//"reconnection.success" = "重连成功！";
+//"reconnection.wait" = "继续等待";
+//
+////location
+//"location.messageType" = "位置信息";
+//"location.fail" = "定位失败";
+//"location.ongoning" = "正在定位...";
+//
+////title
+//"title.conversation" = "会话";
+//"title.addressbook" = "通讯录";
+//"title.discover" = "发现";
+//"title.setting" = "设置";
+//"title.group" = "群组";
+//"title.chatroom" = "聊天室";
+//"title.mychatroom" = "我的聊天室";
+"title.chooseContact" = "选择联系人";
+//"title.debug" = "诊断";
+//"title.groupBlackList" = "群组黑名单";
+//"title.createGroup" = "创建群组";
+//"title.publicGroup" = "公有群组";
+//"title.groupSetting" = "群设置";
+//"title.apnsSetting" = "消息推送设置";
+//"title.buddyBlock" = "黑名单";
+//"title.apply" = "申请与通知";
+//"title.groupApply" = "群组通知";
+//"title.groupSubjectChanging" = "修改群名称";
+//"title.groupSearchMessage" = "查找聊天记录";
+//"title.chatroomlist" = "聊天室列表";
+//"title.robotlist" = "环信助手";
+//"title.profile" = "详细资料";
+//
+//
+////setting
+//"setting.autoLogin" = "自动登录";
+//"setting.loginUser" = "退出登录(%@)";
+//"setting.logoutOngoing" = "正在退出...";
+//"setting.sortbyservertime" = "消息根据服务器时间排序";
+//
+//"setting.notDisturb" = "功能消息免打扰";
+//"setting.showDetail" = "通知显示消息详情";
+//"setting.open" = "开启";
+//"setting.nightOpen" = "只在夜间开启 (22:00 - 7:00)";
+//"setting.close" = "关闭";
+//"setting.sureNotDisturb" = "此设置会导致全天都处于免打扰模式， 不会再收到推送消息. 是否继续?";
+//"setting.callPush" = "实时通话是否发送离线推送";
+//"setting.callResolution" = "实时视频通话分辨率";
+//
+//"setting.uploadLog" = "上传运行日志";
+//"setting.sdkVersion" = "ONE SDK 版本";
+//"setting.uploading" = "正在上传...";
+"setting.uploadSuccess" = "上传成功";
+"setting.uploadFail" = "上传失败";
+//"setting.editName" = "更改昵称";
+//"setting.inputName" = "请输入新昵称";
+//"setting.saveName" = "保存更改昵称";
+//"setting.namenotempty" = "昵称不能为空";
+//"setting.personalInfo" = "个人信息";
+//"setting.setBitrate" = "设置视频通话码率";
+//"setting.setBitrateTips" = "设置视频通话码率范围在150-1000";
+//"setting.personalInfoUpload" = "头像";
+//"setting.edittips" = "设置此昵称以后，在与iOS客户端demo聊天工程中，iOS一侧会显示此昵称而不是环信ID，如果对方使用安卓客户端则此设置不生效";
+//"setting.iospushname" = "iOS离线推送昵称";
+//"setting.useIp" = "使用IP";
+//"setting.deleteConWhenLeave" = "退群时删除会话";
+//"setting.showCallInfo" = "显示视频通话信息";
+//"setting.microphoneNoAuthority" = "未获得授权使用麦克风";
+//"setting.microphoneAuthority" = "请在iOS\"设置中\"-\"隐私\"-\"麦克风\"中打开";
+//"setting.cameraNoAuthority" = "未获得授权使用相机";
+//"setting.cameraAuthority" = "请在iOS\"设置中\"-\"隐私\"-\"相机\"中打开";
+//"setting.cameraUpload" = "拍照上传";
+//"setting.localUpload" = "相册上传";
+//"setting.profileNickname" = "昵称";
+//"setting.saving" = "修改中...";
+"setting.saveFailed" = "修改失败";
+//
+////NSDateCategory
+//"NSDateCategory.text1" = "1分钟内";
+"NSDateCategory.text2" = "分钟前";
+"NSDateCategory.text3" = "小时前";
+"NSDateCategory.text4" = "天前";
+"NSDateCategory.text5" = "月前";
+"NSDateCategory.text6" = "年前";
+"NSDateCategory.text7" = "昨天";
+"NSDateCategory.text8" = "刚刚";
+
+//"NSDateCategory.text8" = "昨天HH:mm";
+//"NSDateCategory.text9" = "凌晨hh:mm";
+//"NSDateCategory.text10" = "上午hh:mm";
+//"NSDateCategory.text11" = "下午hh:mm";
+//"NSDateCategory.text12" = "晚上hh:mm";
+//"NSDateCategory.text13" = "昨天HH:mm";
+//"NSDateCategory.text14" = "今天 %@";
+/////////////////////////////////////////////////////////////
+//<resources>
+"action_scan_qr_code" = "扫描";
+"action_share" = "分享";
+"action_copy" = "复制";
+"action_edit_label" = "编辑标签";
+"action_empty_wallet" = "空钱包";
+"action_sweep_wallet" = "清除钱包";
+"action_settings" = "设置";
+"action_support" = "客服";
+"action_about" = "关于";
+"action_refresh" = "刷新";
+"action_sign_verify_message" = "签署/验证消息";
+"action_account_details" = "帐户详细信息";
+"action_new_address" = "新地址";
+"action_delete" = "删除";
+//    <!-- Errors -->
+"error_generic" = "执行指令时出错";
+"error_could_not_read_wallet" = "无法读取钱包";
+"error_camera" = "不能访问摄像头";
+//    <!-- Generic items -->
+"button_ok" = "确定";
+"button_finish" = "结束";
+"button_confirm" = "确认";
+"button_cancel" = "取消";
+"button_default" = "缺省";
+"button_dismiss" = "取消";
+"button_delete" = "删除";
+"button_add" = "添加";
+"button_save" = "保存";
+"button_send" = "发送";
+"button_retry" = "重试";
+"button_download" = "下载";
+"button_agree" = "同意";
+"button_disagree" = "否定";
+"button_add_coins" = "+币";
+"button_execute" = "执行";
+"yes" = "是";
+"no" = "不是";
+"scan_qr_code" = "扫描二维码";
+"erase_address" = "擦除地址";
+"copied_to_clipboard" = "复制到剪贴板";
+"wallet_title_request" = "接收";
+"wallet_title_balance" = "余额";
+"wallet_title_send" = "发送";
+"wallet_locked_message" = "钱包已加密";
+"wallet_is_not_locked_message" = "您的钱包没有锁定";
+"unlock_wallet_title" = "解密钱包";
+"unlocking_wallet_error_title" = "无法解密钱包";
+"unlocking_wallet_error_detail" = "密码是否正确？请确认输入正确。如果问题没有解决请考虑恢复账号。";
+"powered_by" = "发布者";
+//    <!-- Nav drawer -->
+"navigation_drawer_open" = "打开导航条";
+"navigation_drawer_close" = "关闭导航条";
+ // <!-- SendOutput widget -->
+"fee" = "交易手续费";
+"send" = "发送";
+"trade" = "交易所";
+"receive" = "接收";
+ //<!-- Wallet activity -->
+"wallet_update_title" = "新版本可供更新";
+"wallet_update_message" = "有新版本的ONE，其中包含新功能及修复bug.";
+"pay_with" = "用发送";
+"exchange_and_pay_title" = "换成并发送";
+// <!-- PayToDialog-->
+"ambiguous_address_title" = "地址不明确";
+"ambiguous_address_message" = "请选择正确的币种";
+//    <!-- Balance fragment -->
+"wallet_transactions_coinbase" = "已挖矿";
+"history_empty" = "目前未收到币！\n\n可以从交易所购买，或出售商品、服务或出售劳务。";
+"sent_to" = "发送至";
+"received_with" = "接收";
+"received_from" = "来自";
+"get_tx_info_error" = "无法获取交易信息";
+"disconnected_label" = "无法联网";
+"no_wallet_pocket_selected" = "尚未选择钱包帐号";
+"get_tx_broadcast_error" = "广播交易时出错";
+//   <!-- Receive fragment -->
+"receive_address_label" = "我的地址";
+"create_new_address" = "创建新地址吗？";
+"create_new_address_name" = "别名（可选）";
+"view_previous_addresses" = "前一地址";
+"too_many_unused_addresses" = "未用地址太多，请在创建新地址前使用之前创建的地址。";
+
+//<!-- Send Activity -->
+"send_coins_activity_title" = "发送";
+//   <!-- Send fragment -->
+"send_coins_fragment_receiving_address_tip" = "输入姓名或地址";
+"send_coins_error_network" = "无法连接到网络";
+"send_coins_error_dust" = "发送金额太小，会被网络拒绝。";
+ //  <!-- Here the %1$s is a detailed error message -->
+"send_coins_error" = "无法发送：%1$s";
+"pay_to_label" = "发送给";
+"amount_to_send_label" = "金额";
+"scan_error" = "扫描时出现错误： %1$s";
+//    <!-- Here the \"%1$s\" is the "coin name"-->
+"unsupported_coin" = "不支持的币种：%1$s";
+"address_error" = "输入的地址无效。";
+"amount_error" = "输入的金额无效。";
+"amount_error_negative" = "无法发送负数金额。";
+//<!-- %1$s is the amount e.g. ... is at least 0.00001 BTC-->
+"amount_error_too_small" = "最低金额不少于 %1$s";
+"amount_error_not_enough_money_plain" = "余额不足";
+// <!-- %1$s is the wallet balance e.g. ... current balance is 3.1415 BTC-->
+"amount_error_not_enough_money" = "余额不足，目前余额为";
+"amount_warn_fees_apply" = "因手续费实际发送的数量会稍微少一些。";
+//<!-- Set Password fragment -->
+//<!-- Here the \"%1$s\" is the "password"-->
+//<!-- The %1$d is a number of characters， usually 10 characters -->
+"password_wallet_recovery" = "恢复钱包时，请提供创建保护种子时使用的密码。\n如果你输入一个新密码，会创建一个新的空钱包。";
+"wallet_restoration_master_key" = "创建主钥";
+"wallet_restoration_coin" = "为 %1$s 创建私钥";
+"wallet_restoration_error" = "无法恢复钱包。\n\n%1$s";
+"enter_password" = "输入密码";
+//    <!-- SignTransactionFragment -->
+//<!-- &#8230; is the ... character -->
+"contacting_exchange" = "正在与…交易所通讯";
+"preparing_transaction" = "你的交易正被发送中，请等候。";
+"no_such_pocket_error" = "与钱包通讯时出错。如此问题重复出现，请重新恢复钱包。";
+"password_failed" = "输入的密码无效。";
+//<!-- &#8230; is the ... character -->
+"sending_msg" = "发送中…";
+"sent_msg" = "已发送！等待确认中。";
+"tx_already_broadcast" = "已发送资金";
+"trade_expired" = "交易过期";
+//   <!-- About Activity -->
+//<!-- Add Coins -->
+//<!-- %1$s is the coin name e.g. ... create a Bitcoin account ... -->
+//<!-- %1$s is the coin name e.g. Add Bitcoin? -->
+"adding_coin_confirmation_title" = "添加 %1$s?";
+"adding_coin_working" = "在创建%1$s 帐号时，请等待。";
+"add_coin_error" = "添加 %1$s: %2$s 时出错。";
+"coin_already_added_title" = "已添加。";
+"coin_already_added" = "尚未支持多余帐号。";
+"internal_transfer" = "内部转移";
+"title_activity_transaction_details" = "交易细节";
+"sent" = "已发送";
+"received" = "已接收";
+"status_label" = "状态";
+"date_label" = "日期";
+"transaction_id_label" = "交易ID";
+"view_at_a_blockchain_explorer_link" = "在区块浏览中查看";
+"status_pending" = "等待交易确认";
+"status_unknown" = "交易状态未知";
+"title_activity_exchange_rates" = "兑换汇率";
+"set_local_currency" = "设置 %1$s 为本地货币。";
+"exchange_rates_loading" = "载入兑换汇率";
+"exchange_rates_load_error" = "无法加载兑换汇率";
+"exchange_rates_empty_search" = "无法找到兑换汇率";
+"select_coins" = "选择将何币种加入你的钱包，也可随后添加。";
+"title_activity_previous_addresses" = "我之前的地址";
+"previous_addresses_used" = "用过的地址";
+"previous_addresses_unused" = "未用过的地址";
+"edit_address_book_entry_dialog_address_label" = "地址";
+"edit_address_book_entry_dialog_label_label" = "名称";
+"edit_account_title" = "编辑账户";
+"edit_account_description_label" = "描述";
+"edit_account_delete_title" = "移除账户%1$s?";
+"edit_account_delete_description" = "从钱包移除账户，但还可以重新添加钱包，从而恢复币.";
+"pref_title_restore_wallet" = "恢复钱包";
+"pref_title_exchange_rates" = "兑换汇率";
+"title_activity_backup_seed" = "助记词备份";
+"seed_not_available_title" = "没有找到恢复密码";
+"seed_not_available" = "你的恢复密码没有保存在这个设备上。\n尝试恢复钱包以解决这个问题。";
+"seed_working" = "请等待…";
+"seed_password_protected" = "恢复密码有加密保护 (BIP39)";
+"touch_to_decrypt_wallet" = "触摸解锁";
+"debugging_info" = "您可以在钱包中用工具调试各种问题.";
+"debugging_test_wallet_password" = "钱包锁定测试";
+"debugging_test_wallet_password_results" = "解锁钱包: %1$s\n\n指纹\n输入: %2$s\n钥匙: %3$s";
+"title_activity_overview" = "概况";
+"trade_error_max_limit" = "金额超过 %1$s的限制，请减少金额。";
+"tx_message_public" = "公开消息";
+"tx_message_private" = "私密消息";
+"tx_message_public_add" = "添加公开消息";
+"tx_message_public_remove" = "删除公开消息";
+"title_activity_account_details" = "帐户详细信息";
+"account_public_key_label" = "公钥";
+"account_public_key_warning" = "分享公钥可以让其他人查看你的帐户余额及交易历史";
+"support_message" = "联系ONE的客服";
+"title_activity_transaction_fees" = "转账手续费";
+"tx_fees_title" = "%1$s 转账手续费";
+"tx_fees_description" = "手续费是 %1$s.";
+"tx_fees_per_kilobyte" = "每千字节";
+"tx_fees_per_transaction" = "每交易";
+"tx_fees_per_gas" = "汽油价";
+"terms_of_service_title" = "服务条款";
+"terms_of_service" = "用户协议";
+"group_chats" = "小密圈";
+"open_group_chats" = "发起小密圈";
+"no_msg" = "暂时没有新消息";
+"onechat_id" = "ONE";
+"password_confirm" = "确认密码";
+"menu_groupchat" = "小密圈";
+"menu_addfriend" = "添加朋友";
+"title_home" = "自由沟通";
+"title_wallet" = "万能钱包";
+"title_exchange" = "基于区块链交易";
+"title_my" = "我";
+"tab_title_home" = "密信";
+"tab_title_wallet" = "钱包";
+"tab_title_exchange" = "交易";
+"tab_title_my" = "我";
+"menu_scan_qrcode" = "扫二维码";
+"menu_add_coin" = "添加币";
+"send_success" = "发送成功";
+"unable_to_load_wif" = "不能加载WIF私钥";
+"error_wif" = "创建WIF私钥出错";
+"kindly_create_account" = "创建账户名";
+"please_enter_6_digit_pin" = "请设置PIN码";
+"pin_number_warning" = "PIN码至少6位数字";
+"mismatch_pin" = "PIN码不匹配";
+"error_invalid_account" = "非法账号，请检查您的私钥助记词";
+"please_enter_brainkey" = "请输入私钥助记词";
+"please_enter_correct_brainkey" = "请修正私钥助记词";
+"account_name_should_be_longer" = "账户名至少5个字符";
+"account_name_already_exist" = "账号%s已经存在";
+"account_name_not_exist" = "帐户不存在";
+"account_already_exist" = "账号已经存在";
+"txt_no_internet_connection" = "没有网络连接";
+"unable_to_decode_QR" = "二维码错误";
+"importing_your_wallet" = "导入您的钱包...";
+"str_trading_pair_not_exist" = "交易对不存在";
+"to_capital" = "到";
+"from_capital" = "从";
+"done" = "完成";
+"ok" = "成功";
+"str_warning_only_available" = "警告! 只有 %1$s %2$s 可用";
+"str_balance_available" = "可用";
+"error_transfer_funds" = "广播交易出错，需要少量ONE完成转账。";
+"date_time_zone" = "时区";
+"title_prompt_pin" = "请输入PIN码";
+"cancel" = "取消";
+"delete" = "删除";
+"str_total_status" = "(%1$s %2$s + %3$s %4$s = %5$s %6$s)";
+"transfer_funds" = "转账";
+"try_again" = "请等1分钟后再试";
+"unable_to_load_brainkey" = "不能加载私钥助记词";
+"error_read_dict_file" = "读取字典文件错误";
+"error_with_message" = "错误: %s";
+"error_no_message" = "操作过程中遇到一个错误";
+"account_name_must_include_dash_and_a_number" = "账户名必须包含中划线和数字";
+"validation_in_progress" = "正在验证中..";
+"last_letter_cannot" = "最后一个字符不能为中划线";
+"unable_to_find_account_id" = "不能找到账户ID";
+"unable_to_generate_bin_format_for_key" = "不能生成bin格式的key";
+"saving_bin_file_to" = "保存Bin文件到";
+"folder_name" = "onechain";
+"bin_file_saved_successfully_to" = "Bin文件保存成功";
+"unable_to_save_bin_file" = "不能保存Bin文件";
+"creating_backup_file" = "创建备份文件";
+"fetching_key" = "获取Key";
+"invalid_pin" = "非法的PIN";
+"generating_bin_format" = "生成Bin格式";
+"unable_to_get_account_properties" = "不能获取账户属性";
+"is_already_added" = "已经添加";
+//    <!-- PDF export -->
+
+//<!-- Import Backup activity -->
+"secure_key_important" = "数字货币的安全，核心在于私钥助记词安全，请在不能被拍照、摄像、偷看的情况下进行创建！";
+"accountname_create_username" = "账号";
+"accountname_create_username_tips" = "暂时只支持小写字母和数字且首位不能为数字，至少6位";
+"accountname_create_nickname" = "昵称";
+"accountname_create_nickname_tips" = "请输入昵称";
+"accountname_create_password_tips" = "请输入8位以上密码";
+"accountname_create_password_tips2" = "再次输入密码，最少8位";
+"accountname_restore_key" = "私钥助记词";
+"accountname_restore_key_tips" = "请输入助记单词";
+"accountname_friend_username_tips" = "朋友账号";
+"accountname_friend_nickname" = "昵称";
+"accountname_friend_nickname_tips" = "本地好记的昵称";
+"accountname_search" = "搜索";
+"action_ok" = "确定";
+"accountname_create_title" = "创建账号";
+"accountname_restore_title" = "恢复账号";
+"action_add_friend" = "添加好友";
+"accountname_create_loading" = "正在创建账号...";
+"accountname_add_loading" = "正在添加好友...";
+"create_groupchat_loading" = "正在创建小密圈...";
+"action_have_saved" = "我已经保存";
+"default_chat_sentence" = "我们已经是好友，开始聊天吧!";
+"default_groupchat_sentence" = "%@邀请%@加入了小密圈!";
+"default_groupchat_sentence_plus" = "%@加入了小密圈!";
+"feature_come_soon" = "即将加入，敬请期待！";
+"default_friend_name" = "密友";
+"default_group_name" = "小密圈";
+"text_ack_msg" = "已读";
+"text_delivered_msg" = "送达";
+"button_pushtotalk" = "按住说话";
+"attach_picture" = "图片";
+"attach_take_pic" = "拍照";
+"attach_location" = "位置";
+"attach_file" = "文件";
+"attach_video_call" = "视频通话";
+"attach_send_asset" = "数字资产";
+"move_up_to_cancel" = "手指上滑，取消发送";
+"send_fail" = "发送失败";
+"delete_message" = "删除消息";
+"copy_message" = "复制消息";
+"delete_voice" = "删除语音";
+"delete_video" = "删除视频";
+"resend" = "重新发送";
+"confirm_resend" = "您确认要重新发送该信息？";
+"connect_failuer_toast" = "请检查网络或稍候重试";
+"forward" = "转发";
+"prompt" = "提示";
+"location_recv" = "[%1$s的位置]";
+"location_prefix" = "[我的位置]";
+"picture" = "[图片消息]";
+"video" = "[视频通话]";
+"file" = "[文件消息]";
+"voice_call" = "[语音通话]";
+"voice_msg" = "[语音消息]";
+"voice" = "声音";
+"password" = "密码";
+"downwaiting" = "正在下载文件请稍后";
+"not_download" = "未下载:";
+"is_down_please_wait" = "正在下载视频请稍候";
+"expression" = "[表情]";
+"call_duration" = "通话时长";
+"Refused" = "已拒绝";
+"The_other_party_has_refused_to" = "[对方已拒绝]";
+"The_other_is_not_online" = "[对方不在线]";
+"The_other_is_on_the_phone" = "[对方正在通话中]";
+"The_other_party_did_not_answer" = "[对方未接听]";
+"did_not_answer" = "[未接听]";
+"Has_been_cancelled" = "[已取消]";
+"unable_to_get_loaction" = "无法获取到您的位置信息!";
+"sd_card_does_not_exist" = "SD卡不存在，不能拍照";
+"cant_find_pictures" = "找不到图片";
+"File_does_not_exist" = "文件不存在";
+"The_file_is_not_greater_than_10_m" = "文件不能大于10M";
+"Whether_to_empty_all_chats" = "是否清空所有聊天记录";
+"you_are_group" = "你被群创建者从此群中移除";
+"the_current_group" = "当前小密圈已被群创建者解散";
+"receive_the_passthrough" = "收到透传：action：";
+"Into_the_blacklist" = "移入到黑名单？";
+"Have_downloaded" = "已下载";
+"Did_not_download" = "未下载";
+"message_resend" = "消息已重发";
+"message_send_self" = "不能给自己发消息";
+"gallery" = "相册";
+"camera" = "拍照";
+"select_photo" = "请选择图片";
+"commit" = "提交";
+"transaction_account" = "交易钱包";
+"withdraw" = "转出交易钱包";
+"recharge" = "转入交易钱包";
+"transafer" = "转账";
+"request_address" = "转出交易钱包地址";
+"recharge_address" = "转入交易钱包地址";
+"available_money" = "可用金额";
+"withdraw_address" = "转出交易钱包地址";
+"withdraw_money" = "转出交易钱包金额";
+"withdraw_money_hint" = "请输入转出交易钱包金额";
+"submit_withdraw" = "确认转出交易钱包";
+"withdraw_history" = "历史转出交易钱包记录";
+"money" = "金额";
+"recharge_history" = "历史转入交易钱包记录";
+"long_click_copy" = "长按地址可复制";
+"click_copy" = "点击可复制";
+"recharge_from_wallet" = "从钱包转入交易钱包";
+"recharge_search" = "查询";
+"rcharge_money_hint" = "转入交易钱包金额";
+"tatal_accounts" = "总资产";
+"no_account_tip" = "请先添加本地钱包地址";
+"user_info" = "个人信息";
+"sex" = "性别";
+"man" = "男";
+"women" = "女";
+"unknown" = "未知";
+"nick_name" = "昵称";
+"user_name" = "用户名";
+"user_intro" = "简介";
+"user_email" = "邮箱";
+"user_email_code" = "邮箱验证码";
+"user_tel" = "手机号";
+"user_tel_code" = "手机号验证";
+"get_code" = "获取验证码";
+"input_code" = "请输入验证码";
+"tx_message" = "附加消息";
+//    <!--用户交易-->
+//<!--交易队界面-->
+"highest_bid" = "最高";
+"lowest_ask" = "最低";
+"base_volume" = "交易量";
+//    <!--买、卖、委托单界面-->
+"price" = "价格";
+"available_fund" = "可用资产：";
+"fee_standard" = "费率标准";
+"price_buy" = "买入价：";
+"amount_buy" = "买入量：";
+"price_sell" = "卖出价：";
+"amount_sell" = "卖出量：";
+"price_buy_hint" = "请输入买入价";
+"amount_buy_hint" = "请输入买入量";
+"price_sell_hint" = "请输入卖出价";
+"amount_sell_hint" = "请输入卖出量";
+//    <!--format-->
+"success_format" = "%1$s成功";
+"erro_format" = "%1$s失败";
+"amount_hint_format" = "请输入%1$s量";
+"price_hint_format" = "请输入%1$s价";
+"price_format" = "%1$s价：";
+"amount_format" = "%1$s量：";
+"price_error_format" = "%1$s价有误";
+"amount_error_format" = "%1$s量有误";
+"success" = "成功";
+"error" = "失败";
+"price_buy_error" = "买入价有误";
+"amount_buy_error" = "买入量有误";
+"price_sell_error" = "卖出价有误";
+"amount_sell_error" = "卖出量有误";
+"trade_money" = "交易总额：";
+"trade_buy" = "买入";
+"trade_sell" = "卖出";
+"trade_buy_success" = "买入成功";
+"trade_sell_success" = "卖出成功";
+"trade_buy_fail" = "买入失败";
+"trade_sell_fail" = "卖出失败";
+//<!-- user_trade_title -->
+"user_trade_title_buy" = "买入";
+"user_trade_title_sell" = "卖出";
+"user_trade_title_orders" = "当前委托";
+"user_trade_title_orders_history" = "历史委托";
+"cancel_order" = "撤单";
+"cancel_order_success" = "撤单成功";
+"cancel_order_fail" = "撤单失败";
+"xlistview_footer_hint_nodata_current" = "您暂时没有委托单";
+"xlistview_footer_hint_normal" = "查看更多";
+"xlistview_footer_hint_finish" = "加载完成";
+"not_find_asset" = "查找不到该资产";
+"my_account" = "多链钱包";
+"zero_value" = "0.00";
+"zero" = "0";
+"default_user_intro" = "欢迎来到ONE的世界！";
+"default_value" = "-.--";
+"can_not_withdraw" = "暂时不能转出交易钱包";
+"can_not_deposit" = "暂时不能转入交易钱包";
+"can_not_transfer" = "暂时不能转账";
+"can_not_trade" = "暂时不能交易";
+"wallet_balance_not_enough" = "钱包余额不足";
+"fast_transfer" = "闪电转账";
+"withdraw_intro" = "从交易钱包到本地钱包";
+"recharge_intro" = "从本地钱包到交易钱包";
+"transfer_intro" = "交易钱包之间秒级转账";
+"cancel_order_tip" = "确认撤单?";
+"user_name_can_not_edit" = "用户名不支持修改";
+"edit_address_hint" = "接收方地址";
+"edit_one_address_hint" = "接收方ONE账号";
+"sender" = "发送方";
+"receiver" = "接收方";
+"remark" = "备注";
+"transfer_money" = "转账金额";
+"save_key_tip" = "以下15个私钥助记词极其重要！！！\n一旦泄密，将丢失钱包内所有数字资产！\n一旦丢失，将无法找回钱包内所有数字资产！\n\n强烈建议：\n将单词手写，备份多份，放在不同的安全区域！\n\n务必注意：\n请不要在被拍照、摄像、偷看的情况下进行创建！\n严禁将单词在网络传输、放在网盘等不安全环境！";
+
+"user_contract" = "用户协议";
+"user_contract_txt" = "请遵守各个国家和地区的法律法规，国际公约，以及风俗习惯，请在合法合规的范围内使用本软件，否则请终止";
+"network_unavailable" = "无法加载网络";
+//   <!--group-->
+"change_groupname" = "修改群名称";
+"delete_success" = "删除成功";
+"delete_from_chatgroup" = "您被踢出该群";
+"override_wallet_warning_title" = "清除账号?";
+"override_new_wallet_warning_message" = "创建新钱包，将删除当前钱包，如果您已经备份私钥助记词，可以再用它恢复。";
+"send_msg" = "发消息";
+"chat_asset_num" = "消息数";
+"clear_chat_msg" = "清空聊天信息";
+"change_user_local_name" = "修改好友备注";
+"change_group_name" = "修改群名称";
+"coin_list" = "币种列表";
+"history" = "记录";
+"group_name" = "群名称";
+"click_change_avatar" = "点此修改头像";
+"hint_input_nickname" = "请输入昵称";
+"hint_input_user_name" = "请输入用户名";
+"contacts" = "通讯录";
+"status_confirming" = "正在处理中";
+"status_confirmed" = "已完成";
+"add_symbol" = "+";
+"minus_symbol" = "-";
+"transfer_in" = "转入";
+"transfer_out" = "转出";
+"transfer_address" = "转账地址";
+"lock_status_input" = "请输入您的手势密码";
+"lock_status_create" = "为了减少您输入密码次数，请设置手势密码";
+"lock_status_create_sure" = "请再次输入手势密码";
+"lock_status_correct" = "输入正确";
+"lock_status_wrong" = "密码输入错误，您还可以输入%1$d次";
+"lock_status_second_wrong" = "与首次输入不一致，请重新输入";
+"click_back_again" = "再次按返回键退出";
+"reset" = "重新设置";
+"forget_lock" = "忘记手势密码";
+"change_lock_psw" = "修改手势密码";
+"other_side_address" = "对方地址";
+"account_name_length_erro" = "用户名长度不足，至少5位";
+"password_length_erro" = "密码长度不足，至少8位";
+"password_second_erro" = "密码不一致";
+"register_erro" = "注册失败，请重新设置";
+"clear_mesage_success" = "清除成功";
+"clear_mesage_tip" = "确认清除聊天记录？";
+"forget_password" = "忘记密码";
+"tx_confirm" = "确认交易";
+"change_fees" = "修改手续费";
+"if_set_new_msg" = "接收新消息通知";
+"exchange_type" = "切换兑换汇率";
+"select_langurafe" = "切换语言";
+"Making_sure_your_location" = "正在确定你的位置……";
+"please_check" = "key 验证出错! 请在 AndroidManifest.xml 文件中检查 key 设置";
+"make_sure_save_seed" = "确认保存助记单词？";
+"send_location" = "发送位置";
+"msg_asset" = "[闪电转账]";
+"hint_chat_edittext" = " 正在与%1$s聊天";
+"hint_groupchat_edittext" = " 正在群聊";
+"make_sure_call_to" = "确定拨打给";
+
+"ask_again" = "请给予应用必要权限，让程序可正常工作。";
+"call" = "拨打电话";
+"group_avatar" = "群头像";
+//    <!--k线-->
+"eth_logs_data" = "Data";
+"eth_logs_topic" = "Topics";
+"eth_tx_logs" = "Event Logs";
+"highest" = "高";
+"lowest" = "低";
+"close_price" = "收";
+"open_price" = "开";
+"volume_sum" = "额";
+"tenthousand" = "万";
+"the_rise_and_fall" = "幅";
+"depth" = "深度";
+"target" = "指标";
+"Time_sharingplan" = "分时";
+"day" = "天";
+"hours" = "小时";
+"minutes" = "分钟";
+"seconds" = "秒";
+"close_yet" = "正在交割";
+"one_min" = "1分";
+"five_min" = "5分";
+"fifteen_min" = "15分";
+"thirty_min" = "30分";
+"sixty_min" = "60分";
+"one_day" = "日线";
+"one_week" = "周线";
+"main_target" = "主图";
+"target_boll" = "BOLL";
+"target_ma" = "MA";
+"target_wr" = "WR";
+"target_rsi" = "RSI";
+"target_kdj" = "KDJ";
+"target_macd" = "MACD";
+"string_close" = "关闭";
+"under_target" = "副图";
+"landscape" = "横屏";
+"head_return" = "返回";
+"amount_sum" = "量";
+"string_bid_tips" = "买";
+"string_ask_tips" = "卖";
+"string_network_disconnect" = "网络不可用，请检查网络";
+"string_hangqing_refresh_status_rt" = "已经切换到实时行情";
+"string_hangqing_refresh_status_slow" = "已经切换到普通行情";
+
+"new_group_message" = "有新群消息";
+"lock_status_too_short" = "至少连接%1$d个，请重试";
+"qr_code_nonsupport" = "不支持该格式的二维码";
+"no_trade_tip" = "您目前还没有订单～";
+"no_history_tip" = "您目前还没有记录～";
+"open_out_browser" = "在浏览器中打开";
+"copy_url" = "复制链接";
+"send_fee_value" = "矿工费用";
+"fast" = "快";
+"slow" = "慢";
+"keep_service_alive_reason" = "为了接收ONE离线消息";
+//"white_list_tip_title_power" = "需要忽略%1$s 的电池优化";
+//"white_list_tip_msg_power" = "%1$s需要%2$s 加入到电池优化的忽略名单。\n\n请点击『确定』，在弹出的『忽略电池优化』对话框中，选择『是』。";
+//"white_list_tip_title_close_screen_clean" = "%1$s 需要加入锁屏清理白名单";
+//"white_list_tip_msg_close_screen_clean" = "%1$s需要%2$s 加入到锁屏清理白名单。\n\n请点击『确定』，在弹出的『锁屏清理』列表中，将 %2$s 对应的开关打开。";
+//"white_list_tip_title_xiaomi_hide_model" = "需要关闭  %1$s 的神隐模式";
+//"white_list_tip_msg_xiaomi_hide_model" = "%1$s需要关闭 %2$s 的神隐模式。\n\n在弹出的  %2$s 神隐模式设置中，选择『无限制』，然后选择『允许定位』。";
+//"white_list_tip_title_run_backend" = "需要允许 %1$s 保持后台运行";
+//"white_list_tip_msg_run_backend" = "%1$s需要允许 %2$s 保持后台运行。\n\n请点击『确定』，在弹出的应用信息界面中，将『后台管理』选项更改为『保持后台运行』。";
+//"white_list_tip_msg_run_backend_meizu" = "%1$s需要 %2$s  在待机时保持运行。\n\n请点击『确定』，在弹出的『待机耗电管理』列表中，将 %2$s 对应的开关打开。";
+//"white_list_tip_msg_run_backend_lenovo" = "%1$s需要允许 %2$s  的后台自启、后台 GPS 和后台运行。\n\n请点击『确定』，『后台管理』中，分别找到『后台自启』、『后台 GPS』和『后台运行』，将 %2$s 对应的开关打开。";
+//"white_list_tip_msg_run_backend_lenovo_god" = "%1$s需要禁止 %2$s   被自动清理。\n\n请点击『确定』，在弹出的『后台耗电优化』中，将 %2$s 对应的开关关闭。";
+//"white_list_tip_msg_run_backend_vivo" = "%1$s需要 %2$s  在待机时保持运行。\n\n请点击『确定』，在弹出的『后台高耗电』列表中，将 %2$s 对应的开关打开。";
+//"white_list_tip_title_green_backend" = "%1$s 需要加入应用自启和绿色后台白名单";
+//"white_list_tip_msg_green_backend" = "%1$s需要允许 %2$s  的自启动和后台运行。\n\n请点击『确定』，在弹出的『系统管家』中，分别找到『应用管理』->『应用自启』和『绿色后台』->『清理白名单』，将 %2$s添加到白名单。";
+//"white_list_tip_msg_run_not_clean_backend" = "%1$s需要禁止 %2$s   被自动清理。\n\n请点击『确定』，在弹出的『应用保护』中，将 %2$s 对应的开关关闭。";
+"sure_delete_user" = "确认删除群成员";
+"withdraw_records" = "转出记录";
+"recharge_records" = "转入记录";
+"transfer_records" = "转账记录";
+"my_qr_code" = "我的二维码";
+"my_qr_code_tip" = "扫一扫上面的二维码图案，加我账号";
+"add_friend_error" = "好友添加失败";
+"register_request_ok" = "注册成功";
+"register_request_user_exist" = "用户名已存在";
+"register_request_unknown_registrar" = "注册商错误";
+"register_request_unknown_referrer" = "邀请方错误";
+"register_request_param_error" = "参数错误";
+"register_request_server_error" = "服务错误";
+"register_request_name_error" = "用户名错误";
+"register_request_create_user_exist" = "用户名已存在";
+"exit_wallet" = "清除账号";
+"exit_wallet_warning_message" = "确认清除账号";
+"exit_wallet_warning_message_second" = "再次确认";
+
+"message_title" = "消息提示";
+"defualt_string_id" = "未定义";
+"buildtx_exception" = "构造交易异常";
+
+"get_fee_error" = "加载费用错误";
+//"recharge_search" = "请求转入交易钱包入账";
+"recharge_search_tip" = "已经开始转入交易钱包入账";
+"check_update" = "检查更新";
+"upgrade_tip" = "升级提示";
+"group_invite_url" = "点击复制群邀请链接";
+"status_fail" = "处理失败";
+"null_asset_balance" = "余额不足，请转入交易钱包";
+
+"group_public" = "公开群";
+"group_private" = "私密群";
+"group_type" = "群类型";
+"group_create_title" = "发起小密圈";
+"done_with_count" = "确定(%i)";
+"group_creat_failed" = "发起小密圈失败";
+"group_sendmsg_failed" = "群消息发送失败";
+"group_detail_name" = "群名称";
+"group_detail_avatar" = "群头像";
+"group_detail_share" = "群分享";
+"group_detail_title" = "群组信息";
+"group_change_subject" = "修改群名称";
+"group_change_subject_failed" = "修改群名称失败";
+"group_addcontact_failed" = "添加成员失败";
+"group_deletecontact_failed" = "删除成员失败";
+"group_share_joingroup" = "点击链接加入ONE群组:%@";
+"group_share_failed" = "分享失败";
+"sure_to_delete" = "确认是否清空";
+"message_no_message" = "没有消息";
+"qr_code_nonsupport" = "不支持该格式的二维码";
+
+
+"look_red_packet" = "查看红包";
+"one_red_packet" = "ONE红包";
+"red_packet_text" = "发了一个红包";
+
+"msg_red_packet" = "[红包消息]";
+"red_packet" = "红包";
+
+"send_red_packet" = "发红包";
+"select_coin_type" = "选择币种";
+"send_red_packet_text" = "塞币进红包";
+"user_intro_hint"="个性签名";
+"red_packet_default_msg"="恭喜发财，大吉大利";
+"red_packet_message"="留言";
+"red_packet_num"="红包个数";
+"red_packet_total_amount"="总金额";
+"red_packet_item_amount"="单个金额";
+
+"simple_red_packet_tip"="每人收到固定金额，";
+"lucky_red_packet_tip"="每个人抽到的金额随机，";
+"set_lucky_red_packet"="改为拼手气红包";
+"set_simple_red_packet"="改为普通红包";
+
+"please_select_coin_type"="请选择红包币种";
+
+"red_packet_num_cant_zero"="红包个数不能为0";
+"item"="个";
+"red_packet_value_cant_zero"="红包金额不能为0";
+
+"group_member_num"="本群共%d人";
+"red_packet_num" = "红包个数";
+"ios_amount_big" = "数额太大暂时不能交易";
+"assets_nodata" = "没有资产";
+"signed_failed" = "签名校验失败";
+"check_sign" = "验证签名";
+"red_packet_info" = "红包详情";
+
+"recharge_update" = "请求转入交易钱包";
+"recharge_update_banner" = "如果从其他钱包转入交易钱包，长时间没有到账请点击请求转入交易钱包";
+"user_invite_url_start" = "点开链接加我好友:%@";
+"update_ok" = "升级";
+
+"is_noone_coin" = "地址不合法";
+//"is_nobitcoin_coin" = "不是bitcoin系二维码";
+//"is_noethcoin_coin" = "不是ethereum系二维码";
+"make_sure_seed"="验证私钥助记词";
+"make_sure_seed_error_tip"="私钥助记词验证错误，请检查后重试";
+"transfer_fee"="交易费用";
+"red_packet_account"="在线钱包";
+"one_no_network_tips" = "暂时没有网络，请查看设置->是否允许ONE网络请求，或者关闭程序再次进入。";
+"one_network_error" = "应用网络权限配置异常，请重新启动应用或者打开“无线局域网助理”之后再次尝试！";
+"redpacket_open_failed" = "打开红包失败";
+"redpacket_send_failed" = "发送红包失败";
+"no_target_assets" = "没有指定的资产";
+
+"in_onechain" = "转入交易钱包";
+"out_onechain" = "转出交易钱包";
+"referrer_optional"="邀请码:";
+"write_referrer_account"="请输入邀请码";
+"register_request_exceeded_max_number" = "注册超过最大次数";
+"social_redpacket" = "社交红包";
+"social_redpacket_tip" = "已生成社交红包\n请分享到第三方或者复制链接发送";
+"tap_copy_url"="点击复制链接";
+"social_redpacket_url_start"="币圈全能APP起航，大家快来抢ONE全币种红包:";
+"quit_social_redpacket_tip"="请确认您已分享或复制红包链接";
+"recharge_init_error" = "环境初始化失败";
+"get_asset_list_error" = "获取资产列表失败";
+"add_trade_team" = "添加交易对";
+
+
+"get_asset_list_error" = "获取资产列表失败";
+
+"create_seed" = "生成私钥助记词";
+"input_seed" = "输入私钥助记词";
+"input_seed_tip" = "已有私钥助记词但未注册成功请点击输入私钥助记词";
+"seed" = "私钥助记词";
+"group_members" = "群成员";
+
+
+"chat_info" = "聊天信息(%d)";
+"look_all_group_members" = "查看全部群成员";
+"out_chat_group" = "删除并退出";
+"deleteFailed" = "删除失败";
+"add_error" = "添加失败";
+"lay_trade_time" = "延长验证密码时间为2小时";
+
+"switch_service_node" = "节点检测";
+"config_service_node_ing" = "稍等片刻，正在为您自动选择节点";
+"action_clear" = "清除";
+"choose_seed" = "选择私钥助记词";
+"search_seed" = "按顺序，一次输入一个单词";
+"over_seed_word_num_two" = "私钥助记词位数错误";
+"over_seed_word_num" = "超过私钥助记词位数";
+"action_paste" = "粘贴";
+"pasteboard_is_null" = "剪切板为空，请先拷贝私钥私钥助记词";
+"no_address_now" = "暂无地址";
+"number" = "数量";
+"amount"="金额";
+
+"copy_fail"="复制失败";
+"can_not_delete_trade"="不能删除该交易对";
+"no_auth" = "没有权限";
+//"word_has_uesed" = "助记词已被使用";
+"can_not_remain_5_one" = "剩余ONE币不能少于2个，将用于手续费";
+"setting_more" = "更多";
+"sync_account_fail" = "同步信息失败";
+"register_request_seed_has_register" = "私钥助记词已被使用，可用私钥助记词恢复账号";
+
+//"forget_password_warning" = "应用将进入创建、恢复账号流程并清除缓存数据，确认继续操作吗";
+"jump_pass" = "跳过";
+"test_service_fail_tip" = "节点有问题发送邮件联系客服";
+"sync_data" = "正在同步数据";
+"message_prompt" = "ONE是一个工具，会尽量支持更多数字货币，请谨慎投资，注意风险。";
+"sync_data_timeout" = "正在同步数据，点击屏幕可跳过等待";
+"new_chat_message_num" = "条新消息";
+"have_word" = "已有私钥助记词";
+
+
+// 新注册
+"register_new_account" = "新用户注册";
+"choose_if_have" = "请选择是否拥有私钥助记词";
+"have_no_seed" = "没有私钥助记词";
+"get_seed" = "获取私钥助记词";
+"input_infomation" = "填写信息";
+"register_completed" = "注册完成";
+
+
+// 新群组
+"group_member_list_fail" = "获取群成员失败";
+
+"no_regist_phone" = "尚未验证，绑定手机号增加挖矿算力！";
+"now_bangding" = "立即绑定";
+
+"phone_code_error"="验证码错误";
+"is_busy_later_go"="请求频繁，请稍后再试";
+"phone_num_geshi_error"="手机号码格式错误";
+"country_or_num_empty"="国家代码或手机号码为空";
+
+"please_rember_the_key" = "请抄好15个助记单词";
+"you_just_do_this" = "您只可以用这些单词恢复账户！\n一旦丢失，资产将无法找回！一旦泄漏，资产将会被盗！";
+"safe_tip" = "安全提示：";
+"red1_tip" = "*建议手写或保存在离线设备中";
+"red2_tip" = "*建议注册后立即恢复一次，以确保安全";
+"make_sure_seed_tip" = "请根据你记下的私钥助记词，按顺序点击，验证你备份的私钥助记词正确无误";
+
+"add_network_sataus" = "添加节点";
+"server_ip" = "服务器IP";
+"please_write_server_ip" = "请输入服务器IP";
+"port_num" = "端口";
+"please_write_port_num" = "请输入端口";
+"detection_and_use" = "检测并应用";
+"clear_network_status" = "清除节点";
+"add_success" = "添加成功";
+
+"address_book_need_auth" = "请前往系统设置打开App访问系统通讯录权限";
+"address_book_synchronization" = "同步通讯录";
+"mining" = "挖矿";
+"automatic_mining" = "自动挖宝";
+"mining_progress" = "挖宝中";
+"not_open" = "未开启";
+"my_property" = "我的资产";
+"mining_income" = "挖宝收入";
+"finish_verify" = "完成验证";
+"skip_verify" = "跳过验证";
+"no_screen_shoot" = "请认真抄写，不要用截屏的方式保管助记词。";
+"next_step" = "下一步";
+"please_verify_your_seed" = "为保证您的资产安全，请先备份并验证您的助记词！";
+"now_verify" = "立即验证";
+
+
+"deal_time" = "成交时间";
+"deal_price" = "成交价格";
+"deal_value" = "成交数量";
+"no_records" = "暂无记录";
+
+// 算力
+"mining_cal_number" = "算力值";
+"mining_cal" = "算力";
+"advance_cal_through_invite" = "邀请好友增加算力值";
+"advance_cal_msg" = "点击分享，好友在注册页面填写您的邀请码%@，即可赢得算力加成！";
+"advance_cal_share_msg" = "邀请码：%@。币圈大咖邀您一起瓜分3,000,000个ONELUCK，300,000个ONE！尽快加入哦～请在浏览器中复制粘贴该链接 %@并下载注册";
+// 助记词加密
+"seed_recover" = "助记词恢复";
+"encrypt_seed_recover" = "加密助记词恢复";
+"copy_encryptseed_to_inputview" = "直接粘贴加密助记词到输入框";
+"encrypt_seed_content" = "加密助记词文本内容";
+"password_while_export_seed" = "请输入导出加密助记词时使用的账户密码";
+"start_recover" = "开始恢复";
+"never_remind" = "不再提醒";
+"export_immediately" = "立即导出";
+"whether_export_immediately" = "是否立即导出加密助记词";
+"save_offline_title" = "离线保存";
+"save_offline_content" = "请复制粘贴加密助记词文件到安全、离线的地方保存。切勿保存至邮箱、记事本、网盘、聊天工具等，非常危险。";
+"transmission_offline_title" = "请勿使用网络传输";
+"transmission_offline_content" = "请勿通过网络工具传输加密助记词，一旦被黑客获取将造成不可挽回的资产损失。";
+"remember_password_title" = "请牢记导出加密助记词时使用的账户密码";
+"remember_password_content" = "请牢记导出加密助记词时使用的账户密码，使用加密助记词文件恢复账号时必须使用该密码。";
+"copy_encrypted_seed" = "复制加密助记词";
+"export_encrypted_seed" = "导出加密助记词";
+"encrypted_seed" = "加密助记词";
+"keep_account_password_in_mind"="请牢记该密码，该密码将成为账户密码";
+"invitation_code"="邀请码:";
+
+"no_regist_phone" = "尚未验证，绑定手机号增加挖矿算力！";
+"had_bind_phone" = "您已经绑定过手机号";
+"mining_community" = "挖矿社区";
+"up_mining_power" = "提升算力";
+"sign_add_mining_power" = "每日签到，算力+%@";
+"tap_twice_off" = "双击屏幕退出";
+"save_to_phone"= "保存到手机";
+"save_to_phone_success" = "已保存到手机";
+
+"drug_with_oneclick" = "一键收矿";
+"error_invalid_account_or_pass" = "非法账号，请检查您的私钥助记词或密码";
+
+"group_chat_send_url_tip" = "群聊发链接要发红包哦～";
+"allow_jurisdiction_to_bind_phone" = "请允许访问通讯录，完成手机认证";
+
+"refresh_node_then_retry" = "请刷新节点后重试";
+"recover_account_fail" = "恢复账户失败";
+"unkown_error" = "未知错误";
+
+/******************* New ***********/
+"join_group_error" = "加入群组失败";
+"error_no_account" = "账号不存在";
+"error_uploading_bind_phone" = "上传通讯录失败";
+
+
+// UI界面改版
+
+"less_than_min_withdraw_value" = "提现金额不能少于 %@";
+"ensure_trade" = "担保交易";
+"newton_plan" = "牛顿计划";
+"goto_transaction_account" = "转至交易钱包";
+"detail" = "明细";
+"goto_wallet_account" = "转至多链钱包";
+"goto_redpacket_account" = "转至在线钱包";
+"money_go_and_out" = "法币出入";
+"thridparty_recharge" = "第三方充值";
+
+"service_node_plan" = "节点计划";
+"video_course" = "帮助";
+
+"available" = "可用";
+"freeze" = "冻结";
+"transfer_account_detail" = "交易钱包明细";
+"make_sure_delete_coin" = "您确定要删除该币种吗？";
+"wallet_account_title" = "多链钱包";
+"trade_account_title" = "交易钱包";
+"packet_account_title" = "在线钱包";
+"from_transaction_account" = "来自交易钱包";
+/////映射
+"eos_address" = "EOS地址:";
+"please_write_eos_address" = "请输入EOS地址";
+"begin_map" = "开始映射";
+"search_map_result" = "查询映射结果";
+"eos_map" = "EOS映射";
+//////提现界面
+"receive_address" = "接收地址:";
+"withdraw_money_how_many" = "提现金额";
+"pls_input_amount" = "请输入金额";
+"send_fee" = "手续费:";
+"real_receive" = "实际到账:";
+"confirm_withdraw" = "确认提现";
+////交易界面
+"buy_price" = "买价";
+"sale_price" = "卖价";
+"estimate_price" = "估值";
+"total_money" = "总额";
+"no_create_group_auth" = "您没有建群权限";
+
+// MJRefresh
+"refresh_pull_down" = "下拉可以刷新";
+"refresh_release" = "松开立即刷新";
+"refresh_loading" = "正在刷新数据中...";
+"refresh_last_update" = "最后更新：";
+"refresh_date_today" = "今天";
+"refresh_last_date_no_record" = "无记录";
+//
+"fee_not_enough" = "请预留手续费";
+"app_not_need_update"="已是最新版本";
+//SBC
+"click_to_receive" = "一键领取";
+"get_account_info_fail" = "获取账户信息失败";
+ 
+// 语音图片(new feature)
+"release_to_close"= "松开结束";
+"record_error_permission"="录音失败，请检查权限";
+"record_error_permission"="Recording failed, please check the permission";
+"upload_file_error"="文件上传失败";
+"file_overdue"="文件过期";
+"loading"="加载中...";
+"img_overdue"="图片已过期";
+"setting_microphone_authority"="请在iOS\"设置\"-\"隐私\"-\"麦克风\"中打开";
+"message_start_record_fail"="开始录音失败";
+"error_record_not_stop"="语音录制还没有结束";
+"error_path_not_found"="文件路径不存在";
+"error_record_not_begin"="还没有开始语音录制";
+"error_record_too_short"="录制时间过短";
+"error_format_fail"="格式转换失败";
+"image_save_fail"="图片保存失败";
+"image_save_success"="图片保存成功";
+"image_save_to_album"="保存至相册";
+/////新版群
+"click_to_receive" = "一键领取";
+// 群组管理
+"group_manage" = "群管理";
+"group_id" = "群ID";
+"my_nickname_in_group" = "我在本群昵称";
+"group_qr_code" = "群二维码";
+//"group_affiche" = "群公告";
+"group_notice" = "群公告";
+
+"group_clean_chatting_records" = "清空聊天记录";
+"group_receive_message" = "接受群推送";
+
+
+"mssage_no_disturbing" = "消息免打扰";
+//"group_manger_list" = "管理员列表";
+"group_manager_list" = "管理员列表";
+//"group_silent_list" = "禁言列表";
+"group_muted_member_list" = "禁言列表";
+
+"group_join_type" = "加群方式";
+"group_advertising_redpacket" = "广告红包设置";
+"group_allow_anyone" = "允许任何人";
+"group_identity_authentication" = "进行身份认证";
+"group_need_write_password" = "需要输入密码";
+"group_allow_onone" = "不予许任何人";
+"group_black_list" = "本群黑名单";
+"heading_qrcode_to_img" = "识别图中二维码";
+"save_this_picture" = "保存图片";
+"there_is_no_qrcode" = "该图片没有包含一个二维码！";
+"write_key_word" = "输入关键词";
+"key_word" = "添加关键词";
+"max_key_word" = "最多可以输入10个关键词";
+"setting_charge_content" = "设置为收费内容";
+"charge_amount" = "收费金额";
+"publish" = "发布";
+"input_content" = "输入内容";
+"no_sensitive_character"  = "禁止出现敏感字符。";
+"release_invitation" = "发布帖子";
+
+//////ETH规范
+"eth_standard_switch" = "ETH规范";
+"user_defined_path" = "自定义路径";
+"please_choose_path" = "请选择一种路径";
+
+
+
+
+
+
+
+
+
+// add
+"remove_manager" = "移除管理";
+"release_shutup" = "解除禁言";
+"group_manager_list" = "管理员列表";
+"group_mutedmember_list" = "禁言列表";
+"input_or_change_nickname" = "填写或者修改昵称";
+"pls_input_nickname_in_group" = "请输入在本群的昵称";
+"group_chat" = "聊天";
+"group_community" = "社区";
+"group_notifications" = "群组通知";
+"clean_list" = "清空列表";
+
+// 社区
+
+"all" = "全部";
+"essence" = "精华";
+"charge" = "收费";
+"free" = "免费";
+
+"order_by_time" = "最新发布";
+"order_by_comment" = "评论最多";
+"order_by_profit_up" = "看涨排序";
+"order_by_profit_down" = "看跌排序";
+
+
+"order_by_shang" = "打赏数";
+"order_by_comment_time" = "最新评论";
+//"article_payment" = "支付";
+"pay" = "支付";
+
+//"article_reward" = "打赏";
+"zanshang" = "赞赏";
+//"article_comment" = "评论";
+"comment" = "评论";
+
+"reward_amount" = "赞赏金额";
+"failed_to_reward" = "赞赏失败";
+
+// 点头像
+"button_check_means_card" = "查看资料";
+"button_set_as_manager" = "设为管理员";
+"button_banned_to_post" = "禁言";
+"button_from_group_delete" = "从本群中删除";
+"button_add_blacklist" = "移除并加入黑名单";
+
+"articles_no_more" = "没有更多数据";
+"article_detail" = "详情";
+"article_set_essence" = "设置精华";
+"report" = "举报";
+
+"article_report_success" = "举报成功";
+"article_has_reported" = "您已举报过该微博";
+"article_essence_success" = "设置精华成功";
+
+// 推送
+"message_center" = "消息中心";
+
+// 群管理
+"set_admin_success" = "设置管理员成功";
+"limits_of_authority" = "权限不足";
+"user_not_in_group" = "该用户不在群中";
+"admin_counts_limit" = "管理员人数达到上限";
+"mute_member_success" = "禁言成功";
+"add_member_to_blacklist_success" = "添加黑名单成功";
+"input_join_group_psw" = "请输入加群密码";
+
+"group_mute_all" = "全体禁言";
+"group_at_all" = "@所有人";
+
+"content_too_short" = "内容太短";
+"content_too_long" = "内容超过最大限度";
+///////
+"there_is_no_content" = "你未填写内容";
+"is_sure_to_forgive_this" = "确定放弃当前编辑吗？";
+"max_picture_nine" = "最多选择9张图片";
+"can_not_choose_video" = "无法选择视频";
+"can_not_choose_picture" = "无法选择图片";
+"according_photo_album" = "从相册选取";
+"weibo_msg" = "消息";
+"all_member" = "所有人";
+"someone_at_me" = "[有人@我]";
+
+"group_password_error" = "加群密码错误";
+"in_group_blacklist" = "您在该群黑名单中";
+"expend" = "消耗";
+
+"pls_wait_examine" = "请等待审核";
+"group_not_exist" = "该群不存在";
+"already_in_group" = "您已在该群";
+"msg_not_enough_balance" = "该消息需要发红包,您的余额不足";
+"you_in_ban" = "你已被禁言";
+"all_in_ban" = "全员禁言中";
+"push_comment_weibo" = "评论了你的帖子";
+"push_reward_weibo" = "赞赏了你的帖子";
+"push_pay_weibo" = "查看了你的收费内容";
+"not_enough_money_todo" = "该操作需要消耗资产,您的余额不足";
+"to_pay_a_oneluck" = "您已支付";
+"support_third_party" = "支持第三方钱包助记词注册";
+//////////////////////new
+"audit_join" = "申请加入";
+"group_created_count_exceed" = "创建群个数超过上限";
+////小改动
+"eos_fee_tip" = "EOS映射需要消耗ETH作为手续费";
+"eth_web_search" = "区块链查询映射";
+"weibo_video_max_tip" = "视频最大支持上传500M";
+"eth_web_search" = "区块浏览器查询映射";
+
+///////eos 投票
+"eos_vote" = "投票";
+"pledge" = "抵押";
+"vote" = "投票";
+"stand_node" = "参选节点";
+"super_node" = "超级节点";
+"standby_node" = "备用节点";
+"node" = "节点";
+"node_location" = "节点位置";
+"get_vote_number_sum" = "得票总数";
+"my_vote" = "我的投票";
+"vote_number" = "票数:";
+"all_money_number" = "总资产:";
+"amount_of_the_mortgage_hint" = "请输入需要抵押的数额";
+"eos_vote_max_ticket" = "您最多可以选30个节点";
+
+"pledge_success" = "抵押成功";
+"pledge_fail" = "抵押失败";
+"vote_success" = "投票成功";
+"vote_fail" = "投票失败";
+
+"eos_fee_tip" = "EOS映射需要消耗ETH作为手续费";
+"weibo_video_max_tip" = "视频最大支持上传500M";
+"eth_web_search" = "区块浏览器查询映射";
+"please_write_video_introduce" = "请填写视频介绍";
+"had_eos_map" = "已经映射";
+"have_no_eos_map" = "尚未映射";
+//////////2.0.1
+//////////2.0.1
+"eos_map_tip" = "EOS映射相当于一次ETH的转账，需要消耗ETH作为手续费，建议您5-10分钟之后查询映射结果（特殊情况可能需要更长时间），映射成功后，不必重复进行映射，私钥就是您的助记词";
+"select_my_self" = "自选";
+"reward_message" = "赞赏消息";
+"reply_weibo" = "回复帖子";
+"reply" = "回复";
+"make_sure_delete_tip" = "确认删除？";
+"eos_account_tip" = "账户名只能包含以下字符.12345abcdefghijklmnopqrstuvwxyz 由12个字符组成。";
+
+
+
+"eos_redeem" = "赎回";
+"redeem_successful" = "赎回成功";
+"redeem_fail" = "赎回失败";
+// 好友、群
+"new_friend" = "新的朋友";
+"group_invitation" = "群组邀请";
+"already_agree" = "已同意";
+"remark_length_exceed" = "备注超过字数限制";
+"invite_you_join_group" = "邀请您加入群";
+"invite_has_sent" = "邀请已发出";
+"input_apply_msg" = "请输入验证信息";
+"delete_friend" = "删除好友";
+"pls_wait_apply" = "邀请已发送，请等待对方审核";
+"apply_add_friend" = "申请加为好友";
+"create_a_group" = "创建了群聊";
+"pls_add_friend" = "请先添加好友";
+"order_has_change" = "您的订单有变化";
+"order_id" = "订单ID:";
+"i_am" = "我是";
+"my_group_chat" = "群聊";
+"send_add_friend_msg" = "发送好友申请";
+"send_add_success" = "已发送好友申请";
+"group_max_people" = "群人数达到上限";
+"already_refuse" = "已拒绝";
+/////手续费
+"requesting_eth_fee" = "正在获取手续费...";
+"request_eth_fee_error" = "获取手续费失败";
+
+// 设置新加
+"trade_dividend" = "分红宝";
+"trade_mining" = "交易挖矿";
+
+
+// 人脸识别
+"face_verification" = "人脸验证";
+"very_good" = "非常好";
+"suggest_rise_head" = "建议略微抬头";
+"suggest_lower_head" = "建议略微低头";
+"suggest_yaw_right" = "建议略微向右转头";
+"suggest_yaw_left" = "建议略微向左转头";
+"need_more_light" = "光线再亮些";
+"move_face_into_frame" = "把脸移入框内";
+"keep_static" = "保持不动";
+"left_eye_loss" = "左眼有遮挡";
+"right_eye_loss" = "右眼有遮挡";
+"nose_loss" = "鼻子有遮挡";
+"mouth_loss" = "嘴巴有遮挡";
+"left_cheek_loss" = "左脸颊有遮挡";
+"right_cheek_loss" = "右脸颊有遮挡";
+"mandible_loss" = "下颚有遮挡";
+"face_loss" = "脸部有遮挡";
+"let_device_farther" = "手机拿远一点";
+"let_device_closer" = "手机拿近一点";
+"blink" = "眨眨眼";
+"open_mouth" = "张张嘴";
+"yaw_right" = "向右缓慢转头";
+"yaw_left" = "向左缓慢转头";
+"rise_head" = "缓慢抬头";
+"lower_head" = "缓慢低头";
+"shake_head" = "摇摇头";
+"verify_failed" = "验证失败";
+"in_verify" = "认证中";
+"verify_completion" = "认证完成";
+"face_verified" = "已认证";
+"verify_error_retry" = "认证失败，请重新进行认证";
+"time_out" = "超时";
+"camera_unkown_error" = "出现未知错误，请检查相机设置";
+"camera_func_limited" = "相机权限受限,请在设置中启用";
+"pls_keep_phone" = "请正对手机";
+"face_has_verified" = "已经进行过人脸验证";
+///eos
+"recover_eos_account" = "恢复EOS账户";
+
+"open_treasure_box" = "开宝箱";
+"invitation_code_must" = "邀请码(选填):";
+"eos_public_key" = "EOS公钥";
+
+// 公告////////////
+"announcement" = "公告";
+"one_private_key" = "ONE私钥";
+
+"memo" = "memo备注";
+///////////////////////////////////
+
+"trade_amount" = "交易额";
+"search_all_trade_team" = "搜索交易对";
+
+"select_innovation_trade" = "创新区";
+"select_freedom_trade" = "自由区";
+"trade_title" = "自由淘币";
+
+
+"add_select_succ" = "添加自选成功";
+"add_select_fail" = "添加自选失败";
+"cancel_select_succ" = "取消自选成功";
+"can_not_cancel_select" = "不能取消自选";
+
+"input_amount_low" = "输入数量过小";
+"input_total_low" = "输入总额过小";
+
+"just_can_wallet_recharge" = "暂时只支持从钱包转入交易钱包，请先转到钱包";
+
+
+// Eos source
+
+"resource" = "资源";
+"menory" = "内存";
+"compute" = "计算";
+"network" = "网络";
+"buy_memory" = "购买内存";
+"sell_memory" = "出售内存";
+"amount_of_the_buy_hint" = "请输入需要购买的数额";
+"amount_of_the_sell_hint" = "请输入需要出售的数额";
+"amount_of_receive_hint" = "请输入接收方账户";
+"amount_of_the_redeem_hint" = "请输入需要赎回的数额";
+"oneself" = "自己";
+"others" = "他人";
+"pledge_way" = "抵押方式";
+"lease" = "租借";
+"ownership" = "过户";
+"asset_pledge" = "资产抵押";
+"redeem_pledge" = "赎回抵押";
+"occupy" = "占用";
+"usable" = "可用";
+"network_memory" = "全网内存";
+"redeeming" = "赎回中";
+"eos_input_mortgage_count" = "请输入需要抵押的数额";
+"eos_res_dialog_tip" = "买卖操作会消耗资源，请及时留意您的内存计算网络资源是否充足，我们建议网络和计算资源分别至少抵押0.5个%@，如果您的资源不足，会导致您的交易被区块回滚。";
+"eos_res_memory_tip" = "· 内存资源，可以通过%@买入，同时卖出可获得%@";
+"eos_res_cpu_tip" = "· 计算资源可以通过抵押%@来获取，抵押的%@可以赎回\n· 没有计算资源则无法使用区块系统";
+"eos_res_net_tip" = "· 网络资源可以通过抵押%@来获取，抵押的%@可以赎回\n· 没有网络资源则无法使用区块系统";
+///////eos私钥导入
+"eos_private_key" = "EOS私钥";
+"eos_key_restore" = "EOS私钥恢复";
+"pls_input_key" = "请输入您的%@私钥";
+"private_key" = "私钥";
+"input_private_key" = "导入私钥";
+"btn_input_key" = "立即导入";
+"create_new_account" = "注册新账户";
+"private_key_input" = "已有私钥导入";
+"private_key_length_error" = "私钥不正确";
+"recover_success" = "恢复成功";
+"recover_fail" = "恢复失败";
+"not_enough_ram" = "可用内存资源不足";
+"not_enough_net" = "可用网络资源不足";
+"not_enough_cpu" = "可用计算资源不足";
+"sbc_private_key_tip" = "（领取EOS糖果，请输入EOS私钥）";
+
+"least_avilable_ram" = "剩余可用内存资源需大于%@";
+"least_avilable_cpu_net" = "剩余抵押需大于%@";
+"redeem_countdown" = "赎回倒计时";
+
+// 新我的界面
+
+"select_skin" = "切换皮肤";
+"default_skin" = "经典皮肤";
+"black_skin" = "黑金皮肤";
+
+"my_tools" = "我的工具";
+
+"dapp_application" = "Dapp应用";
+"task" = "任务";
+"other_service" = "第三方服务";
+"news" = "新闻";
+"quotation" = "行情";
+"news_flash" = "快讯";
+
+"chanins_wallet" = "多链钱包";
+"onechain_wallet" = "交易钱包";
+"online_wallet" = "在线钱包";
+"fabiqu" = "法币区";
+
+"memo_tip" = "若充值到交易所，请按交易所要求填写memo备注，否则将无法充值到账";
+"send_fail_tip" = "由于区块会经常出现堵塞或超时，若发送失败请在区块浏览器进行确认，以免造成重复操作。";
+"send_third_party" = "转至第三方平台";
+"authority" = "官方";

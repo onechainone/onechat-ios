@@ -1,0 +1,16 @@
+{
+    "desc":"开发模式",
+    "UrlConfigFileName":"GateUrlConfigDev",
+    "OneChainId":"595025d6b5c44ad886b674fb4a5869c74da9686ea4c8c8886d9d832fb67ff264",
+    "OnePrefix":"ONE",
+    "OneChatAmount":1,
+    "OneChatFee":100,
+    "OneCoinAssetId":"1.3.0",
+    "OneChatAssetId":"1.3.1",
+    "NodeLimit":10,
+    "NodeSelectLimit":100,
+    
+    
+}
+
+

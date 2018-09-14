@@ -1,0 +1,14 @@
+/* Localized versions of Info.plist keys */
+
+"CFBundleDisplayName" = "密信";
+"NSAppleMusicUsageDescription" = "才能访问媒体资料库发视频";
+"NSPhotoLibraryAddUsageDescription" = "才能访问相册上传头像或发送图片";
+"NSPhotoLibraryUsageDescription" = "才能访问相册上传头像或发送图片";
+"NSCameraUsageDescription" = "才能访问相机以扫描二维码或发送图片";
+"NSContactsUsageDescription" = "才能访问通讯录以绑定身份信息";
+"NSLocationWhenInUseUsageDescription" = "才能访问位置以发送定位";
+"NSLocationUsageDescription" = "才能访问位置以发送定位";
+"NSLocationAlwaysUsageDescription" = "才能访问位置以发送定位";
+"NSMicrophoneUsageDescription" = "才能访问麦克风进行语音聊天";
+
+

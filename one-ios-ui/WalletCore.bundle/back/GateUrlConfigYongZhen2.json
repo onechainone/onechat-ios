@@ -1,0 +1,38 @@
+{
+    "service_gate":[
+        "http://hongkonggate1.coinjj.com"
+    ],
+    "service_gateway":[
+                    "http://hongkonggateway1.coinjj.com"
+                    ],
+    "service_register":[
+                    "http://hongkongfaucet1.coinjj.com"
+                    ],
+    "service_group":[
+                     "http://hongkonggroup1.coinjj.com"
+                    ],
+    "service_chat":[
+                    "ws://onechat1.yuyin365.com:22202"
+    ],
+    
+    "service_asset":[
+                    "ws://testchat3.yuyin365.com:22204"
+                    ],
+    
+    "service_storage":[
+                     "http://teststorage2.yuyin365.com"
+                     ],
+    
+    "service_avatar":[
+                       "http://hongkongavatar1.coinjj.com"
+                       ],
+    
+    "service_image":[
+                      "http://hongkongimage1.coinjj.com"
+                    ],
+    
+    "service_portal":[
+                     "http://hongkongportal1.coinjj.com"
+                     ]
+    
+}

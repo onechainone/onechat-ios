@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>ONE</string>
+	<key>CFBundleExecutable</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.4.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>onechat.one</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>onechatapp</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>weibo</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wb2086560360</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>wx</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxf17278d4d668cfd6</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>240</string>
+	<key>FacebookAppID</key>
+	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>sinaweibosso</string>
+		<string>weibo</string>
+		<string>weibosdk</string>
+		<string>weibosdk2.5</string>
+		<string>sinaweibo</string>
+		<string>sinaweibohd</string>
+		<string>weixin</string>
+		<string>fbauth</string>
+		<string>fbauth2</string>
+		<string>fb-messenger-platform-20150714</string>
+		<string>fb-messenger</string>
+		<string>lineauth</string>
+		<string>line</string>
+		<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>storylink</string>
+		<string>whatsapp</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MOBAppKey</key>
+	<string>22ae18d2ab76c</string>
+	<key>MOBAppSecret</key>
+	<string>79f89ba63a142c1721b1c6e8cb7b9143</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>NSIncludesSubdomains</key>
+			<true/>
+			<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+			<key>NSTemporaryExceptionMinimumTLSVersion</key>
+			<string>TLSv1.1</string>
+		</dict>
+	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>so you can send your videos.</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>ONE需要您的同意,才能访问蓝牙</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>ONE需要您的同意,才能访问日历</string>
+	<key>NSCameraUsageDescription</key>
+	<string>so you can scan QR code and send pictures.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>so you can verify your identity information.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>ONE需要您的同意,才能访问健康分享</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>ONE需要您的同意,才能访问健康更新 </string>
+	<key>NSHomeKitUsageDescription</key>
+	<string>ONE需要您的同意,才能访问HomeKit权限</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>so you can send you location.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>so you can send you location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>so you can send you location.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>so you can send voice messages.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>ONE需要您的同意,才能访问运动与健身</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>so you can upload your profile and send pictures.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>so you can upload your profile and send pictures.</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>ONE需要您的同意,才能访问提醒事项</string>
+	<key>NSSiriUsageDescription</key>
+	<string>ONE需要您的同意,才能访问Siri</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>ONE需要您的同意,才能访问语音识别</string>
+	<key>NSVideoSubscriberAccountUsageDescription</key>
+	<string>ONE需要您的同意,才能访问TV Provider</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>

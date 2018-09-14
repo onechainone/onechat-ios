@@ -1,0 +1,55 @@
+
+
+seed-> build private key-> build public key -> build address -》websocket get accountId -> websocket get accountName -> http get accountInfo
+
++(void) recoverAccountWithSeed:(NSString*) seed pass:(NSString*) pass cb:(ASFunctionCallback) cb {
+
+
+			// seed,pass 参数为空
+			Def_InvokeFunctionParamException
+
+
+			// recoverAccountWithPass -- sync account fail
+			Def_EC_RecoverAccountFail
+			
+			
+			    [WSHomeAccount pullHomeUserInfoWithAddress:pass cb:^(BOOL state, id data) {
+
+									get address
+									
+									// 地址为空
+									Def_EC_RecoverAccountAddressIsNull
+
+
+								  [WSAccountMngr pullAccountInfoWithAddress:add cb:^(BOOL state, WSAccountInfo* info) {
+
+
+														    [OneWebSocketServiceAgent getAccountByAddress:address cb:^(BOOL state, NSArray* data) {
+
+	
+																						address -> account id  net error
+																						
+																						Def_EC_RecoverAccountReturnAccountIdIsNull
+																						
+																						account id -> account info net error
+																						
+																						
+
+																 Def_EC_RecoverAccountReturnDataException
+																 
+																 
+																 [self pullAccountInfoWithName:name type:AccountTypeStranger cb:cb];
+																 
+																 			// accountName is null
+																 			Def_EC_GetAccountInfoParamException
+																 			
+																 			[OneHttpServiceAgent getUserInfoByAccountName:accountName cb:^(BOOL state, NSDictionary* data) {
+
+
+																							Def_EC_RecoverAccountReturnDataException
+																							
+																							Def_EC_RecoverAccountAddAccountFail
+																							
+																							net error
+
+

@@ -1,0 +1,38 @@
+{
+    "service_gate":[
+        "http://192.168.1.182:8580/"
+    ],
+    "service_gateway":[
+                    "http://192.168.1.182:8581/"
+                    ],
+    "service_register":[
+                        "http://192.168.1.121:5001/"
+                    ],
+    "service_group":[
+                     "http://testnet3-group1.coinww.com:8582/"
+                    ],
+    "service_chat":[
+                    "ws://onechat1.yuyin365.com:22201"
+    ],
+    
+    "service_asset":[
+                    "ws://testchat3.yuyin365.com:22204/"
+                    ],
+    
+    "service_storage":[
+                     "http://teststorage2.yuyin365.com:18080/"
+                     ],
+    
+    "service_avatar":[
+                       "http://testavatar2.yuyin365.com:18080/"
+                       ],
+    
+    "service_image":[
+                      "http://testimage2.yuyin365.com:80/"
+                    ],
+    
+    "service_portal":[
+                     "http://testnet3-portal1.coinww.com:80/"
+                     ]
+    
+}

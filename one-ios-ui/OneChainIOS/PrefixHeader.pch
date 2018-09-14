@@ -1,0 +1,632 @@
+//
+//  PrefixHeader.pch
+//  LZEasemob3
+//
+//  Created by nacker on 16/10/25.
+//  Copyright © 2016年 帶頭二哥 QQ:648959. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#endif
+
+//#define REDPACKET_AVALABLE //注释，即可禁用红包功能
+
+#ifdef __OBJC__
+#pragma mark - -------------------------第三方-------------------------
+
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//#import <Hyphenate_CN/EMSDKFull.h>
+
+/// 常用全局常量
+#import "CommonConstants.h"
+
+
+//币的单例
+#import "CoinInfoMngr.h"
+
+#import <UIImageView+WebCache.h>
+
+#import "EaseUI.h"
+
+#define DEMO_CALL 0
+
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+Add.h"
+#import "MJRefresh.h"
+#import "Masonry.h"
+#import "EMSDWebImageManager.h"
+#import "EMSDImageCache.h"
+#import "ReactiveCocoa.h"
+#import "MJExtension.h"
+#import "FMDB.h"
+// #import "JKDBHelper.h"
+#import <YYModel.h>
+#import "UIImageView+AFNetworking.h"
+#import "NSString+Addition.h"
+#import <SVProgressHUD.h>
+#import "CoinTools.h"
+
+#pragma mark - -------------------------分类工具类-------------------------
+
+
+#import "UIColor+Addition.h"
+#import "UIAlertController+Addition.h"
+#import "UILabel+Addition.h"
+//语言切换
+#import "NSBundle+Language.h"
+
+#import "CSUtil.h"
+#import "UIView+Extension.h"
+#import "NSString+Extension.h"
+#import "UIImage+Extension.h"
+#import "ONESDKHeader.h"
+#define Def_Support_GroupChatMode 1
+
+#pragma mark - -------------------------常用宏-------------------------
+// 1.颜色
+#define KColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define KRGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+// 2.随机色
+#define KRandomColor KColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+// 3.是否为iOS7
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+// 4.是否为4inch
+#define KfourInch ([UIScreen mainScreen].bounds.size.height == 568)
+
+// 5.屏幕尺寸
+#define KScreenW [UIScreen mainScreen].bounds.size.width
+#define KScreenH [UIScreen mainScreen].bounds.size.height
+///iphone 5的屏幕宽高
+#define IPHONEFIVESCREENH          320
+///plus 的宽
+#define IHPHONEPLUSWIDTH           414
+//定义字体
+#define SMALL_FRONT                11.5
+#define TWELFTH_FRONT              12
+#define LITTLE_LABEL_FRONT         14
+#define LABEL_FRONT                16
+#define LABEL_MID_FRONT            18
+#define LABEL_BIG_FRONT            20
+#define SEED_LABEL_FRONT           25
+#define BIG_FRONT                  40
+#define TEN_FRONT                  10
+//是不是iphonex
+#define IS_IPHONE_X (KScreenH == 812.0f) ? YES : NO
+//#define Height_TabBar (IS_IPHONE_X==YES)?83.0f: 49.0f
+
+// iphoneX 底部高度
+#define iPhoneX_BOTTOM_HEIGHT  ([UIScreen mainScreen].bounds.size.height==812?34:0)
+// 分享的下载链接
+#define MINING_SHARE_MSG_URL @"http://app.onechain.one/appstart.html"
+// 联系客服邮箱
+#define CUSTOMER_SERVICE_EMAIL @"user@onechain.one"
+//颜色
+#define BTN_BACKGROUNDCOLOR        0xFF6000
+#define GAY_COLOR                  0xFF4E5D6F
+#define BUYZHUZHUANG_COLOR         0xFD7144
+#define SALEZHUZHUANG_COLOR        0x13CA7E
+#define TIPS_COLOR                 0x1177D8
+#define GREEN_COLOR                0x13CA7E
+#define ZHUZHUANGTU_LV             0x07B47A
+#define RECOVERTIPS_COLOR          0xFF4500
+#define RECOVERACCOUNT_COLOR       0x1177D8
+#define SILIDERLINE_COLOR          0xE9E9E9
+#define LABELCOLOR                 0x4E5D6F
+#define TRANSFER_COLOR             0xFFBF99
+#define BIANKUANG_COLOR            0x979797
+#define REDPACKET_TIP_COLOR        0xFFDDAE
+#define FINISH_COLOR               0x267AEB
+#define DEALING_COLOR              0xE8B801
+#define REDPACKET_TITLE_COLOR      0xDB5942
+#define MONEY_COUNT_COLOR          0x4E5D6F
+#define BORDER_COLOR               0xADADAD
+#define SLIDER_NO_SLIDE            0xD8D8D8
+#define BLACK_COLOER_ONE           0x000000
+#define NEW_TRADE_RED_PERCENT      0xFD7144
+#define NEW_TRADE_GREEN_PERCENT    0x13CA7E
+#define BTC_TYPE_COLOR             0xF7921A
+#define EOS_TYPE_COLOR             0x303030
+#define ETH_TYPE_COLOR             0x447ACC
+#define SBC_TYPE_COLOR             0x31D802
+#define TEXT_VIEW_BORDER_COLOR     0xE9E9E9
+
+#define DEFAULT_BLACK_COLOR RGBACOLOR(48, 48, 48, 1)
+#define DEFAULT_GRAY_COLOR RGBACOLOR(131, 131, 131, 1)
+
+#define THEME_BLACK_COLOR          0x838383
+//主题色
+#define THEME_COLOR                0xFF6000
+#define BACKGROUND_COLOR           0xEFF2F9
+//自定义间距
+#define LEFT_SPACE                 18
+#define RIGHT_SPACE                18
+#define LITTLE_LITTLE_SPACE        5
+#define LITTLE_SPACE               10
+#define MID_MID_SPACE              15
+#define MID_SPACE                  20
+#define LARGE_SPACE                30
+#define NAVHEIGHT                  44
+#define TABBARHEIGHT               49
+#define SPEACE_ZERO                0
+#define TABBAR_SPEACE              64
+#define BTN_HEIGHT                 44
+#define SEX_SPECE                  50
+#define SLIDERSTART                0
+#define SLIDEREND                  100
+#define IPHONEXMARGIN              20
+//二维码
+#define ERWEIMA_TYPE_ONEAPP        @"onechatapp"
+#define ERWEIMA_TYPE_TRANSFER      @"transfer"
+#define ERWEIMA_TYPE_DEPOSIT       @"deposit"
+#define ERWEIMA_TYPE_ACTION        @"a"
+#define ERWEIMA_TYPE_ADDFRIEND     @"addfriend"
+#define ERWEIMA_YTPE_ACCOUNT_NAME  @"n"
+#define ERWEIMA_TYPE_ADDRESS       @"address"
+#define ERWEIMA_TYPE_TAG           @"_tag_"
+#define ERWEIMA_TYPE_AMOUNT        @"amount"
+#define ERWEIMA_TYPE_MEMO          @"memo"
+
+#define Def_UserOneNodeTag @"UserOneNodeTag"
+// URL Scheme
+// 加入群组
+#define SCHEME_ACTION_JOIN_GROUP   @"join_group"
+// 添加好友
+#define SCHEME_ACTION_ADD_FRIEND   @"addfriend"
+// Fast Transfer
+#define SCHEME_ACTION_TRANSFER     @"fast_transfer"
+
+#define SCHEME_ACTION_TRANSFER_TWO @"fast_transfer2"
+//跳转
+#define SCHEME_ACTION_SOCIAL_REDPACK @"red_packet"
+// 登录
+#define SCHEME_ACTION_LOGIN @"login"
+
+#define SCHEME_ACTION_DIALOG @"dialog"
+//绑定手机号
+#define SCHEME_ACTION_BIND_PHONE @"bind_phone"
+///分享挖矿图片
+#define SCHEME_ACTION_SHARE_IMG @"share_mining_img"
+//分享挖矿文字
+#define SCHEME_ACTION_SHARE_TEXT @"share_mining_text"
+// 创建群组
+#define SCHEME_ACTION_CREATE_GROUP @"create_group"
+
+// 人脸识别
+#define SCHEME_ACTION_FACE_REC @"face_liveness"
+
+//#define 
+//ethereum
+#define ERWEIMA_TYPE_ETHEREUM      @"ethereum"
+#define ERWEIMA_TYPE_BITTION       @"bitcoin"
+
+///提现的key
+//account_withdraw_request
+#define ACCOUNT_WITHDRAW_REQUEST   @"account_withdraw_request"
+///eos充值的key
+#define EOS_ACCOUNT_RECHARGE_REQUEST @"account_eos_deposit"
+///eos 提现的key
+#define EOS_ACCOUNT_WITHDRAW_REQUEST @"account_eos_withdraw"
+///sbc充值的key
+#define SBC_ACCOUNT_RECHARGE_REQUEST @"account_sbc_deposit"
+///sbc 提现的key
+#define SBC_ACCOUNT_WITHDRAW_REQUEST @"account_sbc_withdraw"
+
+//语言的宏 myLanguage
+#define LANGUAGE_EN                @"en"
+#define LANGUAGE_ZH_HANS           @"zh-Hans"
+//德语
+#define LANGUAGE_DE                @"de"
+//韩语
+#define LANGUAGE_KO                @"ko"
+//意大利语
+#define LANGUAGE_IT                @"it"
+//法语
+#define LANGUAGE_FR                @"fr"
+//菲律宾语
+#define LANGUAGE_FIL               @"fil"
+//葡萄牙语
+#define LANGUAGE_PT                @"pt"
+//荷兰语
+#define LANGUAGE_NL                @"nl"
+//印度尼西亚
+#define LANGUAGE_ID                @"id"
+//西班牙语
+#define LANGUAGE_ES                @"es"
+//阿拉伯语
+#define LANGUAGE_AR                @"ar"
+//印度语
+#define LANGUAGE_HI                @"hi"
+//日语
+#define LANGUAGE_JA                @"ja"
+
+#define MY_LANGUAGE                @"myLanguage"
+
+/*currency*/
+#define MONEY_SYMBOL [[OAuth sharedOAuth].moneyType isEqualToString:CNY_SYMBOL]?CNY_SYMBOL:USD_SYMBOL
+//
+#define JIANTIZHONGWEN             @"简体中文"
+#define ENGLISH                    @"English"
+#define RIYU                       @"日本語"
+#define HANWEN                     @"한국어"
+#define YIDALIYU                   @"Italiano"
+#define DEYU                       @"Deutsch"
+#define FAYU                       @"Français"
+#define FEILVBINYU                 @"Tagalog"
+#define PUTAOYAYU                  @"Protuguês"
+#define HELANYU                    @"Nederlands"
+#define YINDUNIXIYAYU              @"Bahasa Indonesia"
+#define XIBANYAYU                  @"Español"
+#define ALABOYU                    @"العربية"
+#define YINDUYU                    @"हिन्दी"
+
+
+
+//自定义密码
+#define passWord                   @"12345678"
+#define EMPTY_STR                  @""
+#define EMPTY_MONEY                @"-.--"
+#define YEAR_SECOND                31536000
+///最大的精度
+#define MAX_PRECISION              8
+#define GETPRICETIME               300.0
+//multiple one chat的倍数
+#define ONECHATMULTIPLE            100
+#define ONE_LIMIT_AMOUNT           2
+///钱币的id
+#define CNY_SYMBOL                 @"CNY"
+#define USD_SYMBOL                 @"USD"
+#define CHINESELANGUGETYPE         @"zh-Hans"
+#define ENGLISHLANGUGETYPE         @"en"
+
+
+
+
+
+///笑脸的id
+#define ONE_GOOD                   @"1.3.7"
+#define ONE_GOOD_ASSET_CODE        @"ONEGOOD"
+#define ONE_LUCK                   @"ONELUCK"
+
+///哭脸的id
+#define ONE_BAD                    @"1.3.8"
+#define ONE_BAD_ASSET_CODE         @"ONEBAD"
+#define ONESYMBOL                  @"ONE"
+#define ETHSYMBOL                  @"ETH"
+#define BTCSYMBOL                  @"BTC"
+#define MBTCSYMBOL                 @"mBTC"
+
+#define ONE_CHATID                 @"1.3.1"
+#define ASSET_ID                   @"asset_id"
+#define BASE_SYMBOL                @"base_symbol"
+#define SHORT_NAME                 @"short_name"
+#define TRADE_TEAM_BASE_SYMBOL     @"BTC_ONE"
+
+///最小精度 min_precision
+#define MIN_PRECISION              @"min_precision"
+#define SHORT_NAME                 @"short_name"
+#define ASSET_CODE                 @"asset_code"
+///余额里面的总额
+#define BALANCE_AMOUNT             @"amount"
+///precision 余额里面的精度
+#define BALANCE_PRECISION          @"precision"
+#define COUNT_ZERO                 @"0"
+
+//模态的圆角
+#define MODAL_CIRCULAR             3
+///模态的透明度
+#define MODAL_ALPHA                0.3
+//按钮的透明度
+#define BTN_ALPHA                  0.4
+#define BTN_NOALPHA                1
+//按钮圆角
+#define BTN_CIRCULAR               4
+
+// 6.自定义Log
+#ifdef DEBUG
+#define KLog(...) NSLog(__VA_ARGS__)
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define KLog(...)
+#define NSLog(...)
+#endif
+
+
+
+
+#define IOS_VERSION [[UIDevice currentDevice] systemVersion]>=9.0
+
+#define IOS_NOWVERSION [[UIDevice currentDevice] systemVersion]
+
+#define WD_StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height //状态栏高度
+#define WD_NavBarHeight 44.0
+#define WD_TabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49) //底部tabbar高度
+#define WD_TopHeight (WD_StatusBarHeight + WD_NavBarHeight) //整个导航栏高度
+
+//横向比例
+#define WidthScale(number) ([UIScreen mainScreen].bounds.size.width/375.*(number))
+//纵向比例
+#define HeightScale(number) ([UIScreen mainScreen].bounds.size.height/667.*(number))
+
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+/*#define KScreenW [UIScreen mainScreen].bounds.size.width
+ #define KScreenH [UIScreen mainScreen].bounds.size.height*/
+
+#define IS_IPHONE_PLUS KScreenW==414&&KScreenH==736
+
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+
+#define KNOTIFICATION_LOGINCHANGE @"loginStateChange"
+
+#define CHATVIEWBACKGROUNDCOLOR [UIColor colorWithRed:0.936 green:0.932 blue:0.907 alpha:1]
+
+///有关type 的宏
+#define MAN                        1
+#define WOMAN                      2
+#define SETTINGMAN                 0
+#define SETTINGWOMAN               1
+
+#define MANSTR                     @"1"
+#define WOMANSTR                   @"2"
+//receive
+#define HAS_RECEIVE                1
+#define HAS_SEND                   0
+////EOS最大的投票数
+#define LOCAL_MAX_PIAO             30
+
+//支付模态页面的类型
+#define SEND_WRITEPASSWORDTYPE     @"1"
+//输入密码验证的类型
+#define VERIFICATION_WRITEPASSWORDTYPE @"2"
+//闪电转账
+#define FLASHTRANSFORM_TYPE        @"3"
+//充值
+#define RECHARGE_TYPE              @"2"
+//提现
+#define WITHDRAW_TYPE              @"1"
+//柱状图买类型
+#define BUYZHUZHUANG_TYPE          @"1"
+//卖
+#define SALEZHUZHUANG_TYPE         @"2"
+//切换汇率类型
+#define CHAGERATE                  @"0"
+//切换语言
+#define CHAGELANGUAGE              @"1"
+//输入密码界面 是登录 还是确认交易
+#define CONFIRMLOGIN_TYPE          @"1"
+//交易
+#define CONFIRMTRADE_TYPE          @"2"
+//错误的弹框的类型
+//恢复钱包密码错误
+#define BACKUPMODALERROR_TYPE      @"1"
+///登录验证密码错误
+#define LOGINMODALERROR_TYPE       @"2"
+///交易密码错误
+#define TRADEMODALERROR_TYPE       @"3"
+///添加比密码错误
+#define ADDMONEYMODALERROR_TYPE    @"4"
+/************************************************************/
+//有关通知的宏
+//实时获取每个钱币的价格
+#define GETMONEYPRICE              @"GETMONEYPRICE"
+#define TABLEVIEWRELOADDATA        @"TABLEVIEWRELOADDATA"
+#define BUYORSALERELOADDATA        @"BUYORSALERELOADDATA"
+///通知的宏 SWITCHROOTVIEWCONTROLLERNOTI
+//切换控制器
+#define NOTIFICATION_SWITCH_ROOT_VIEWCONTROLLER         @"SWITCHROOTVIEWCONTROLLERNOTI"
+//添加朋友
+#define NOTIFICATION_ADD_FRIEND    @"NOTIFICATION_ADD_FRIEND"
+//原子列表
+#define NOTIFICATION_ATOMLIST_RELOAD @"NOTIFICATION_ATOMLIST_RELOAD"
+///充值列表
+#define NOTIFICATION_RECHARGELIST_RELOAD @"NOTIFICATION_RECHARGELIST_RELOAD"
+
+#define NOTIFICATION_GROUPSUBJECT_UPDATED @"NOTIFICATION_GROUPSUBJECT_UPDATED"
+#define NOTIFICATION_MESSAGE_TABBAR_SELECTED @"NOTIFICATION_MESSAGE_TABBAR_SELECTED"
+#define NOTIFICATION_MESSAGE_TABBAR_NOTSELECTED @"NOTIFICATION_MESSAGE_TABBAR_NOTSELECTED"
+#define NOTIFICATION_TRADETEAM_LOADOVER @"NOTIFICATION_TRADETEAM_LOADOVER"
+#define NOTIFICATION_TIME_TO_RELOAD @"NOTIFICATION_TIME_TO_RELOAD"
+#define NOTIFICATION_TIME_OUT @"NOTIFICATION_TIME_OUT"
+
+#define NOTIFICATION_SELECT_WALLET_TABBAR @"NOTIFICATION_SELECT_WALLET_TABBAR"
+///告诉交易界面下拉刷新
+#define NOTIFICATION_TRADE_RELOAD @"NOTIFICATION_TRADE_RELOAD"
+///segment 点击切换控制器
+#define NOTIFICATION_SEGMENT_CHANGE @"NOTIFICATION_SEGMENT_CHANGE"
+///交易详情返回
+#define NOTIFICATION_TRADEDETAIL_BACK @"NOTIFICATION_TRADEDETAIL_BACK"
+
+#define DefTokenInvalidNotifTag @"TokenInvalidTag"
+
+//价格重新加载
+#define BALANCERELOAD              @"BALANCERELOAD"
+//笑脸重新加载
+#define GOODANDBADRELOAD           @"GOODANDBADRELOAD"
+#define RELOADWALLETTABLEVIEW      @"RELOADWALLETTABLEVIEW"
+/************************************************************/
+
+
+#define app_repair_ver @"0.1.1"
+
+// 开发模式
+#define as_dev 0
+
+// 测试模式
+#define as_test 1
+
+// 发布模式
+#define as_release 2
+
+#define app_store 4
+// 代码编译模式
+#define as_complie_mode as_release
+//是不是appstore模式
+#define as_appstore_mode as_release
+
+// 是否是正式服务器环境
+#define server_en_release 1
+
+#define MORE_ERROR_DESCRIPTION @"USER_SHOW_MORE_ERROR_INFO"
+
+
+
+#define as_is_dev_mode (as_complie_mode == as_dev)
+#define as_is_test_mode (as_complie_mode == as_test)
+#define as_is_release_mode (as_complie_mode == as_release)
+#define as_is_appstore_mode (as_appstore_mode == app_store)
+
+
+#define as_is_private_mode (as_complie_mode == as_dev || as_complie_mode == as_test)
+
+
+#if as_is_dev_mode
+
+#define Def_TestCode
+
+#endif
+
+#if as_is_release_mode
+#define NSLog(...)
+#else
+#define NSLog(...) NSLog(__VA_ARGS__)
+#endif
+
+
+//币种类型
+/*
+ 
+ CORE_ETH("CORE_ETH"),
+ CORE_ETC("CORE_ETC"),
+ CORE_BTC("CORE_BTC"),
+ CORE_BTS("CORE_BTS"),
+ CORE_ONE("CORE_ONE"),
+ CORE_ERC20("CORE_ERC20");
+ */
+#define ETHENGINE_TYPE             @"CORE_ETH"
+#define ETCENGINE_TYPE             @"CORE_ETC"
+#define BTCENGINE_TYPE             @"CORE_BTC"
+#define BTSENGINE_TYPE             @"CORE_BTS"
+#define ONEENGINE_TYPE             @"CORE_ONE"
+#define ERCENGINE_TYPE             @"CORE_ERC20"
+#define EOSENGINE_TYPE             @"CORE_EOS"
+#define SBCENGINE_TYPE             @"CORE_SBC"
+
+////core eng
+
+#define BTSCOINBUSINESS            @"BTSCoinBusiness"
+#define ONECOINBUSINESS            @"OneCoinBusiness"
+#define ETCCOINBUSINESS            @"ETCoinBusiness"
+#define BTCCOINBUSINESS            @"BTCoinBusiness"
+#define ERCCOINBUSINESS            @"ERCoinBusiness"
+#define EOSCOINBUSINESS            @"EosCoinBusiness"
+
+// dev
+//#define JUDGE_EOS_CHAIN_ID @"1c6ae7719a2a3b4ecb19584a30ff510ba1b6ded86e1fd8b8fc22f1179c622a32"
+// release
+#define JUDGE_EOS_CHAIN_ID @"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906"
+
+#define JUDGE_EOS_SYMBOL @"EOS"
+#define JUDGE_EOS_PUBLISHACCOUNT @"eosio.token"
+
+
+
+////////////////////////////sbc
+#define JUDGE_SBC_CHAIN_ID @"6c6233014b24ca2d291676e19c3a8cfe2fcca4e70d3878ec092346a62b5ade9a"
+#define JUDGE_SBC_SYMBOL @"SBC"
+#define JUDGE_SBC_PUBLISHACCOUNT @"eosio.token"
+
+
+
+/**
+ @"OneCoinBusiness":@"LZSendOneViewController",
+ @"ETCoinBusiness":@"LZSendEtcViewController",
+ @"BTCoinBusiness":@"LZSendBtcViewController",
+ @"ERCoinBusiness":@"LZSendErcViewController"
+ */
+
+
+
+#define NSDefLocalizedString(a) NSLocalizedString(a,@"")
+
+
+#define DefDecimalArithmeticMode
+
+// 拉取信息间隔
+#define KCHECKNET_DURATION 5 * 60 * 1000
+
+#define FONT_NAME_REGULAR @"PingFangSC-Regular"
+
+#define FONT_NAME_MEDIUM @"PingFangSC-Medium"
+
+#define FONT_NAME_LIGHT @"PingFangSC-Light"
+
+#define FONT_NAME_SEMIBOLD @"PingFangSC-Semibold"
+
+#define GROUP_MAX_MEMBER_SIZE 19999
+///////癌度的pch
+#import "KImageView.h"
+#import "ShowImageView.h"
+#import "NSString+ExtendString.h"
+#import "MTool.h"
+#import "ImageManager.h"
+#import "UIImageView+WebCache.h"
+#import "UILabel+Addition.h"
+#import "UIColor+Addition.h"
+
+#define BIAOTICOLOR  0x4E5D6F
+
+
+
+
+#define IOS11 (([[UIDevice currentDevice].systemVersion doubleValue] >=11.0)?YES:NO)
+#define IOS10 (([[UIDevice currentDevice].systemVersion doubleValue] >=10.0)?YES:NO)
+#define IOS9  (([[UIDevice currentDevice].systemVersion doubleValue] >=9.0)?YES:NO)
+#define IOS8  (([[UIDevice currentDevice].systemVersion doubleValue] >=8.0)?YES:NO)
+#define IOS7  (([[UIDevice currentDevice].systemVersion doubleValue] >=7.0)?YES:NO)
+
+#define iPhone4s ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhonePlus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+#define SystemDefaultColor (ColorWithRGB(254.0f, 117.0f, 26.0f, 1))
+//#define SystemDefaultColor (ColorWithRGB(254.0f, 117.0f, 26.0f, 1))
+#define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
+
+#define NULL_STRING             @""// 空的字符串
+#define ColorWithRGB(A,B,C,ALPHA) ([UIColor colorWithRed:A/255.0f green:B/255.0f blue:C/255.0f alpha:ALPHA])
+#define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
+
+
+
+
+#import <SMS_SDK/SMSSDK.h>
+
+#define SMSSDKUIBundle [[NSBundle alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"SMSSDKUI" ofType:@"bundle"]]
+
+#define SMSLocalized(_S_) NSLocalizedStringFromTableInBundle((_S_), @"Localizable", SMSSDKUIBundle, nil)
+
+#define StatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+
+#ifdef DEBUG
+
+#define SMSUILog(s, ...) NSLog(@"\n\n---------------------------------------------------\n %s[line:%d] \n %@ \n---------------------------------------------------\n", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+
+#else
+
+#define SMSUILog(s, ...)
+
+#endif
+
+#define SMSSDKAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:NSLocalizedStringFromTableInBundle(@"notice", @"Localizable", SMSSDKUIBundle, nil) message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:NSLocalizedStringFromTableInBundle(@"sure", @"Localizable", SMSSDKUIBundle, nil) otherButtonTitles:nil] show]
+
+#endif /* PrefixHeader_pch */

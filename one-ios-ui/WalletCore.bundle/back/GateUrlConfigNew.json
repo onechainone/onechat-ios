@@ -1,0 +1,60 @@
+{
+    "service_gate":[
+        "http://hkgate1.yuyin365.com",
+        "http://hkgate1.coinjj.com"
+    ],
+    "service_gateway":[
+                    "http://hkgateway1.yuyin365.com",
+                    "http://hkgateway1.coinjj.com"
+                    ],
+    "service_register":[
+                    "http://47.91.211.218:5000",
+                    "http://47.91.229.247:5000"
+                    ],
+    "service_group":[
+                     "http://hkgroup1.yuyin365.com",
+                     "http://hkgroup1.coinjj.com"
+                    ],
+    "service_chat":[
+                    "ws://47.92.108.254:21201",
+                    "ws://47.91.214.153:21201",
+                    "ws://onerpc009.yuyin365.com",
+                    "ws://onerpc009.coinjj.com",
+                    "ws://onerpc008.coinjj.com"
+    ],
+    
+    "service_asset":[
+                    "ws://onerpc008.yuyin365.com",
+                    "ws://onerpc008.coinjj.com",
+                    "ws://onerpc009.coinjj.com"
+                    ],
+    
+    "service_storage":[
+                     "http://teststorage2.yuyin365.com",
+                     "http://teststorage2.yuyin365.com"
+                     ],
+    
+    "service_avatar":[
+                      "http://hkavatar1.yuyin365.com",
+                       "http://hkavatar1.coinjj.com"
+                       ],
+    
+    "service_image":[
+                      "http://hkimage1.yuyin365.com",
+                      "http://hkimage1.coinjj.com"
+                    ],
+    
+    "service_portal":[
+                      "http://hkportal1.yuyin365.com",
+                     "http://hkportal1.coinjj.com"
+                     ],
+    "service_openservice":[
+                           "http://hkopenservice1.yuyin365.com",
+                           "http://hkopenservice1.coinjj.com"
+                    ],
+    "service_openservice_ui":[
+                              "http://hkopenserviceui1.yuyin365.com",
+                              "http://hkopenserviceui1.coinjj.com"
+                            ]
+    
+}

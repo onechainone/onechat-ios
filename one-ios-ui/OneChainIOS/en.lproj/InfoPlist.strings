@@ -1,0 +1,13 @@
+/* Localized versions of Info.plist keys */
+
+"CFBundleDisplayName" = "ONE Chat";
+"NSAppleMusicUsageDescription" = "so you can send your videos.";
+"NSPhotoLibraryAddUsageDescription" = "so you can upload your profile and send pictures.";
+"NSPhotoLibraryUsageDescription" = "so you can scan QR code and send pictures.";
+"NSCameraUsageDescription" = "so you can scan QR code and send pictures.";
+"NSContactsUsageDescription" = "so you can verify your identity information.";
+"NSLocationWhenInUseUsageDescription" = "so you can send you location.";
+"NSLocationUsageDescription" = "so you can send you location.";
+"NSLocationAlwaysUsageDescription" = "so you can send you location.";
+"NSMicrophoneUsageDescription" = "so you can send voice messages.";
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="63" id="KGk-i7-Jjw" customClass="LZSettingThingsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="62.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="延长验证交易密码时间(将由每次延长为2小时一次)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-SE-pTY">
+                        <rect key="frame" x="18" y="12.5" width="225" height="33.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="225" id="HeU-uh-vSl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightenter" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-9P-3gi">
+                        <rect key="frame" x="294" y="24.5" width="8" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="UPp-vp-pa8"/>
+                            <constraint firstAttribute="width" constant="8" id="kUT-cE-XXT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNY" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEQ-Ay-AT4">
+                        <rect key="frame" x="170" y="23" width="116" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="116" id="9MZ-A0-dSD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="aXo-9P-3gi" secondAttribute="trailing" constant="18" id="0rs-bl-azH"/>
+                    <constraint firstItem="SOs-SE-pTY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-2.25" id="0xz-ew-0EZ"/>
+                    <constraint firstItem="MEQ-Ay-AT4" firstAttribute="centerY" secondItem="aXo-9P-3gi" secondAttribute="centerY" id="1kA-u1-ZKe"/>
+                    <constraint firstItem="SOs-SE-pTY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="frs-aj-Vl8"/>
+                    <constraint firstItem="aXo-9P-3gi" firstAttribute="centerY" secondItem="SOs-SE-pTY" secondAttribute="centerY" constant="2.5" id="iz1-AL-LVn"/>
+                    <constraint firstItem="aXo-9P-3gi" firstAttribute="leading" secondItem="MEQ-Ay-AT4" secondAttribute="trailing" constant="8" id="mBZ-eG-lPK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="SOs-SE-pTY" id="o47-eP-XJL"/>
+                <outlet property="rightImg" destination="aXo-9P-3gi" id="7SX-r3-wyJ"/>
+                <outlet property="titleLabel" destination="MEQ-Ay-AT4" id="uyp-82-5bP"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="89.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="rightenter" width="8" height="15"/>
+    </resources>
+</document>

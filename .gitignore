@@ -16,6 +16,9 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
+Pods/
+Podfile.lock
+
 
 ## Other
 *.moved-aside
