@@ -15,7 +15,7 @@
 
 APP启动需要调用`registerSDK`来初始化SDK环境，在`Appdelegate`的`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions `方法中调用。
 
-```object-c
+```objc
 [[ONEChatClient sharedClient] registerSDK];
 ```
 
@@ -23,7 +23,7 @@ APP启动需要调用`registerSDK`来初始化SDK环境，在`Appdelegate`的`- 
 
 如果本地没有账号则需要去注册或者恢复,建议在进行注册或者恢复之前先进行节点检测以选择性能最优的节点。如果本地有账号信息则验证密码即可。
 
-```object-c
+```objc
 BOOL exist = [ONEChatClient isHomeAccountExist];
 ```   
 
@@ -35,18 +35,18 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 生成助记词   
 
-	```object-c
+	```objc
 	NSString *seed = [ONEChatClient buildSeed];
 	```
 - 获取本地存储的助记词   
 
-	```object-c
+	```objc
 	NSString *seed = [ONEChatClient seedWithPassword:password];
 	```
 	
 - 验证助记词是否合法
 
-	```object-c
+	```objc
 	// invalidSeeds会返回错误的助记单词列表
 	NSMutableArray *invalidSeeds = [NSMutableArray array];
     
@@ -57,13 +57,13 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 	加密助记词是通过助记词和用户密码通过一系列加密生成的加密字符串
 
-	```object-c
+	```objc
 	NSString *encryptedSeed = [ONEChatClient getEncryptedSeed];
 	```   
 	
 - 用密码解密加密后的助记词   
 
-	```object-c
+	```objc
 	NSString *seed = [ONEChatClient aesCommonDecryptWithPass:password string:encryptedSeed];
 	```
 	
@@ -71,7 +71,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 生成账号信息
 
-	```object-c
+	```objc
 	WSAccountInfo* info = [[WSAccountInfo alloc] init];
 	info.name = name;	// 用户名
 	info.nickname = nickname;	// 昵称
@@ -84,7 +84,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	注册账号需要传`WSAccountInfo`对象、助记词以及密码   
 
 
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] createAccount:info seed:seed password:password completion:^(ONEError *error){
 	
 		dispatch_async(dispatch_get_main_queue(), ^{
@@ -107,7 +107,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 	恢复账号需要传入助记词以及密码
 
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] recoverAccount:seed password:self.miMatextFiled.text completion:^(ONEError *error) {
        
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -128,7 +128,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 	APP每次启动,如果本地存在账号，则不需要进行注册或者恢复操作，通过验证密码可以激活账号。   
 	
-	```object-c
+	```objc
 	BOOL state = [ONEChatClient verifyAccountWithPassword:password];
 	```
 	> 验证密码成功之后也会回调`- (void)accountVerificationFinish:(AccountVerifyType)type;`。在此方法中需要去做获取token等一系列操作。`delegate`使用方法使用见。   
@@ -143,7 +143,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	`AccountName`为注册时传入的用户名   
 	获取自己的`AccountName`:
 	
-	```object-c
+	```objc
 	NSString *accountName = [ONEChatClient homeAccountName];
 	```
 
@@ -152,7 +152,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	`AccountId`是服务器生成的唯一ID，格式为`1.2.xxx`。   
 	获取自己的`AccountId`:
 	
-	```object-c
+	```objc
 	NSString *accountId = [ONEChatClient homeAccountId];
 	```   
 	
@@ -161,25 +161,25 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	`AccountInfo`为自己的账号信息，包括用户名、昵称、性别、头像URL等信息。   
 	获取自己的`AccountInfo`:   
 	
-	```object-c
+	```objc
 	WSAccountInfo *info = [ONEChatClient homeAccountInfo];
 	```
 	
 - 本地是否有账号信息   
 
-	```object-c
+	```objc
 	BOOL isExist = [ONEChatClient isHomeAccountExist];
 	```   
 	
 - 本地账号是否已经激活   
 
-	```object-c
+	```objc
 	BOOL isActive = [ONEChatClient isHomeAccountActive];   
 	```
 	
 - 更新本地账号信息   
 
-	```object-c
+	```objc
 	BOOL isSuccess = [ONEChatClient saveAccountInfo:accountInfo];
 	```
 	
@@ -187,7 +187,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 	只能更新用户性别、昵称、简介
 
-	```object-c
+	```objc
     [[ONEChatClient sharedClient] pushAccountInfo:accInfo completion:^(ONEError *error) {
        
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -205,7 +205,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 	传入UIImage对象
 
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] uploadAvatar:image completion:^(ONEError *error) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -237,7 +237,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	
 	获取到的头像URL在界面展示时需要拼接Host   
 	
-	```object-c
+	```objc
 	NSString *urlString = [NSString stringWithFormat:@"%@%@",[ONEUrlHelper userAvatarPrefix], accountInfo.avatar_url];
 	```
 
@@ -246,7 +246,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 获取账号信息   
 
-	```object-c
+	```objc
 	// 根据accountId获取账号信息
 	WSAccountInfo *info = [ONEChatClient accountInfoWithId:accountId];
 	// 根据accountName获取账号信息
@@ -257,7 +257,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 通过`accountName`获取账号信息，如果本地有，取本地，本地没有从Server拉取   
 
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] pullAccountInfoWithAccountName:accountName completion:^(ONEError *error, WSAccountInfo *accountInfo) {
 	    // 获取成功之后会自动更新本地存储的账号信息                    
 	}];
@@ -265,7 +265,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	
 - 通过`accountName`获取账号信息，直接从Server拉取更新本地   
 
-	```object-c
+	```objc
     [[ONEChatClient sharedClient] updateFriendAccountInfoWithCompletion:^(ONEError *error) {
        	if (!error) {
        		// 成功
@@ -277,7 +277,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	
 	通过`accountId`列表获取,自动更新本地   
 	
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] pullAccountInfosWithAccountIdList:needFetchList completion:^(ONEError *error) {
    }];
 	```   
@@ -299,21 +299,21 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 文本消息   
 
-	```object-c
+	```objc
 	NSString *willSendText = @"message";
 	ONETextMessageBody *body = [[ONETextMessageBody alloc] initWithText:willSendText];
 	```   
 	
 - 图片消息   
 
-	```object-c
+	```objc
 	NSData *imageData = UIImageJPEGRepresentation(image, 1);
 	ONEImageMessageBody *body = [[ONEImageMessageBody alloc] initWithData:imageData];
 	```   
 	
 - 位置消息   
 
-	```object-c
+	```objc
 	double latitude = 1.0;
 	double longitude = 1.0;
 	NSString *address = @"北京市";
@@ -322,7 +322,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 语音消息
 
-	```object-c
+	```objc
 	NSString *voiceLocalPath = @"语音文件本地路径";
 	int duration = 语音时长;
 	ONEVoiceMessageBody *body = [[ONEVoiceMessageBody alloc] initWithLocalPath:localPath];
@@ -331,7 +331,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 	
 - 红包消息   
 
-	```object-c
+	```objc
 	NSDictionary *dic = @{
 	                      @"red_packet_id":红包ID,
 	                      @"red_packet_msg":红包留言
@@ -359,7 +359,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 	构造`ONEMessage`时，`from`是自己的`accountName`,单聊时，`to`为聊天对方的`accountName`。群聊时，`to`为群组ID。需要指定消息类型。
 	
-	```object-c
+	```objc
 	NSString *toUser = @"username";	// 对方的accountName，如果是群的话为群组ID
 	ONETextMessageBody *body = [[ONETextMessageBody alloc] initWithText:@"msg"];
    NSString *from = [ONEChatClient homeAccountName];
@@ -373,7 +373,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 构造完成`ONEMessage`对象完成后，调用SDK提供的api进行消息的发送操作。   
 发送失败会回调相应的```error```。
 
-```object-c
+```objc
 [[ONEChatClient sharedClient] sendMessage:message progress:nil completion:^(ONEMessage *message, ONEError *error) {
         
     if (!error) {
@@ -388,13 +388,13 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 首先要在需要接收的页面注册回调,需要在哪个页面接收消息的通知，就在哪个界面注册回调。   
 
-```object-c
+```objc
 [[ONEChatClient sharedClient] addDelegate:self delegateQueue:nil];
 ```   
 
 实现代理方法：   
 
-```object-c
+```objc
 /**
  收到新消息
 
@@ -405,7 +405,7 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 ### 解析消息   
 
-```object-c
+```objc
 - (void)didReceiveMessages:(NSArray *)aMessages
 {
 	for (ONEMessage *msg in aMessages) {
@@ -485,29 +485,28 @@ BOOL exist = [ONEChatClient isHomeAccountExist];
 
 - 获取会话列表   
 
-	```object-c
+	```objc
 	NSArray *list = [[ONEChatClient sharedClient] getAllConversations];
 	```
 
 - 获取单个会话实例   
 
 
-	```object-c
+	```objc
 	// 如果本地没有这个会话会创建新的实例
 	ONEConversation *conversation = [[ONEChatClient sharedClient] getConversation:conversationChatter type:conversationType createIfNotExist:YES];
 	```
 	
 - 删除某个人的会话
 
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] deleteConversationFromUser:accountName];
 	```   
 	
 - 删除某个会话实例
 
-	```object-c
+	```objc
 	[[ONEChatClient sharedClient] deleteConversation:conversation];
 	```
     
-
 
